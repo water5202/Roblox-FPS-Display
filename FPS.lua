@@ -153,7 +153,7 @@ textSizeConstraint.MinTextSize = 16
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
-			LABEL.Visible = not LABEL.Visible
+			UI.Visible = not UI.Visible
 		end
 	end
 end)
