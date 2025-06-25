@@ -14,6 +14,7 @@ local highestFPS = 0
 local t = 0
 local var = true
 
+-- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
 UI.Name = "55 49"
 UI.Parent = PLAYERGUI
@@ -31,6 +32,7 @@ LABEL.TextScaled = true
 LABEL.Text = "nul/nul"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.Active = true
+LABEL.Draggable = true
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "54 45 58 54 20 4c 41 42 45 4c 01"
@@ -63,6 +65,7 @@ RGB.BackgroundTransparency = 1
 RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
 
+------------------------------------ exclude this in studio
 local IY = Instance.new("TextButton")
 IY.Name = "54 45 58 54 20 4c 41 42 45 4c 04"
 IY.Parent = toolbar
@@ -72,6 +75,7 @@ IY.Size = UDim2.new(0, 15, 0, 15)
 IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
+------------------------------------
 
 LABEL.MouseButton2Click:Connect(function()
 	local function fade(object, targetTransparency, duration)
@@ -117,7 +121,7 @@ LABEL.MouseButton2Click:Connect(function()
 		end)
 	end
 end)
-
+-----------------------------
 close.MouseButton1Click:Connect(function()
 	UI:Destroy()
 end)
@@ -154,6 +158,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	end
 end)
 
+-- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.Insert then
@@ -162,6 +167,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	end
 end)
 
+-- FPS Counter
 RunService.RenderStepped:Connect(function(dt)
 	frameCount += 1
 	elapsedTime += dt
@@ -177,6 +183,7 @@ RunService.RenderStepped:Connect(function(dt)
 	end
 end)
 
+-- RGB color animation loop
 spawn(function()
 	while true do
 		if var == true then
@@ -194,6 +201,7 @@ spawn(function()
 	end
 end)
 
+-- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
 	Text = "thanks for using the script!",
