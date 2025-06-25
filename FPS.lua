@@ -24,14 +24,13 @@ LABEL.Name = "54 45 58 54 20 4c 41 42 45 4c"
 LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 LABEL.Parent = UI
 LABEL.Size = UDim2.new(0, 130, 0, 60)
-LABEL.Position = UDim2.new(0, 0, 0, 0)
+LABEL.Position = UDim2.new(0, 150, 0, 10)
 LABEL.BackgroundTransparency = 0
 LABEL.Font = Enum.Font.RobotoMono
 LABEL.TextScaled = true
 LABEL.Text = "nul/nul"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.Active = true
-LABEL.Position = UDim2.new(0, 150, 0, 10)
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "54 45 58 54 20 4c 41 42 45 4c 01"
