@@ -198,7 +198,7 @@ spawn(function()
 	end
 end)
 -- drag
-local FrameDrag = DraggableObject.new(UI.LABEL)
+local FrameDrag = DraggableObject.new(LABEL)
 FrameDrag:Enable()
 -- Notifications
 StarterGui:SetCore("SendNotification", {
