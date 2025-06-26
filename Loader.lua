@@ -280,7 +280,7 @@ spawn(function()
 
 		local interpolated = color1:lerp(color2, t)
 		IY.TextColor3 = interpolated
-		wait(0.000000000000000000000000001)
+		wait(0.0000000000001)
 	end
 end)
 -- Notifications
