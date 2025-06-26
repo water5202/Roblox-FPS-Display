@@ -34,7 +34,7 @@ local direction = 1
 local highestFPS = 0
 local rainbowT = 0
 local lerpT = 0
-local var = false
+local var = true
 
 -- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
