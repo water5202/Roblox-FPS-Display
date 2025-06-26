@@ -181,7 +181,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
 				if toolbar.Visible then
-					toggleToolBar()
+					toggleToolbar()
 				end
 			if LABEL.Visible then
 				local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
