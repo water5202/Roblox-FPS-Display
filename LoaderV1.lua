@@ -16,7 +16,7 @@ local TweenService = game:GetService("TweenService")
 local PLAYER = Players.LocalPlayer
 local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
 
-if PLAYERGUI:FindFirstChild("55 49") then
+if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
         Title = "Script Handler",
         Text = "script already loaded",
