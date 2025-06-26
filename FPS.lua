@@ -170,35 +170,42 @@ textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
 -- closing the fackin gui
+local fullSize = UDim2.new(0, 130, 0, 60)
+local fullPos = LABEL.Position
+
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
 			if LABEL.Visible then
 				local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 0, LABEL.Size.Y.Scale, LABEL.Size.Y.Offset)
+					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset)
 				})
 				shrinkX:Play()
 				shrinkX.Completed:Connect(function()
 					local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Size = UDim2.new(0, 0, 0, 0)
+						Size = UDim2.new(0, 0, 0, 0),
+						Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
 					})
 					shrinkY:Play()
 					shrinkY.Completed:Connect(function()
 						LABEL.Visible = false
-						LABEL.Size = UDim2.new(0, 130, 0, 60)
+						LABEL.Position = fullPos
+						LABEL.Size = fullSize
 					end)
 				end)
 			else
 				LABEL.Visible = true
+				LABEL.Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
 				LABEL.Size = UDim2.new(0, 0, 0, 0)
-				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 0, 0, 60)
-				})
 
+				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					Size = UDim2.new(0, 0, 0, fullSize.Y.Offset),
+					Position = fullPos
+				})
 				growY:Play()
 				growY.Completed:Connect(function()
 					local growX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Size = UDim2.new(0, 130, 0, 60)
+						Size = fullSize
 					})
 					growX:Play()
 				end)
