@@ -197,9 +197,7 @@ spawn(function()
 	end
 end)
 -- drag
-local DraggableObject = require(LABEL.DraggableObject)
-local FrameDrag = DraggableObject.new(LABEL)
-FrameDrag:Enable()
+
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
