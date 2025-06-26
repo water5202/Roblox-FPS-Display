@@ -1,13 +1,18 @@
 -- script made by water.5202
-local LOADED = true
-if loaded == true then
+local CAP = nil
+if getgenv().LOADED then
 	StarterGui:SetCore("SendNotification", {
-	Title = "water.5202",
-	Text = "script is already loaded!",
-	Duration = 5,
-})
+		Title = "water.5202",
+		Text = "script is already loaded!",
+		Duration = 5,
+	})
+else
+	getgenv().LOADED = true
 end
 
+CAP = getfpscap()
+print("Current Max FPS is: ".. CAP)
+print("FPS set to Unlimited because mobile has poor performance")
 setfpscap(32767) 
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
