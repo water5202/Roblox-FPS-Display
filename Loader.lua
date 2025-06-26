@@ -1,11 +1,12 @@
 -- script made by water.5202
 local version = "version 1.0.0"
+print(version)
 
 local CAP = nil
 CAP = getfpscap()
 print("Current Max FPS is: ".. CAP)
 task.wait(0.7)
-print("FPS set to Unlimited because mobile has poor performance")
+print("FPS set to Unlimited because mobile has poor performance...")
 
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
