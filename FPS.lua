@@ -155,7 +155,27 @@ textSizeConstraint.MinTextSize = 16
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
-			LABEL.Visible = not LABEL.Visible
+			if LABEL.Visible then
+				local tween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					BackgroundTransparency = 1,
+					TextTransparency = 1,
+				})
+				tween:Play()
+				tween.Completed:Connect(function()
+					LABEL.Visible = false
+					LABEL.BackgroundTransparency = 0
+					LABEL.TextTransparency = 0
+				end)
+			else
+				LABEL.BackgroundTransparency = 1
+				LABEL.TextTransparency = 1
+				LABEL.Visible = true
+				local tween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					BackgroundTransparency = 0,
+					TextTransparency = 0,
+				})
+				tween:Play()
+			end
 		end
 	end
 end)
