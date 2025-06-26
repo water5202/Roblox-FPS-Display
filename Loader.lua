@@ -34,7 +34,7 @@ local direction = 1
 local highestFPS = 0
 local rainbowT = 0
 local lerpT = 0
-local var = true
+local var = false
 
 -- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
@@ -180,43 +180,47 @@ local isVisible = true
 local originalSize = LABEL.Size
 
 function toggleLabelVisibility()
-    if isVisible then
-        LABEL.TextTransparency = 1
-        local shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.1, originalSize.Y.Scale, originalSize.Y.Offset)
-        })
-        shrinkHoriz:Play()
-        shrinkHoriz.Completed:Wait()
+	if isVisible then
+		LABEL.TextTransparency = 1
 
-        local shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.1, 0, 0)
-        })
-        shrinkVert:Play()
-        shrinkVert.Completed:Wait()
+		local shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
+		})
+		shrinkHoriz:Play()
+		shrinkHoriz.Completed:Wait()
 
-        isVisible = false
-    else
-        local growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.1, originalSize.Y.Scale, originalSize.Y.Offset)
-        })
-        growVert:Play()
-        growVert.Completed:Wait()
+		local shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+			Size = UDim2.new(0, originalSize.X.Offset * 0.05, 0, 0)
+		})
+		shrinkVert:Play()
+		shrinkVert.Completed:Wait()
 
-        local growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = originalSize
-        })
-        growHoriz:Play()
-        growHoriz.Completed:Wait()
+		LABEL.Visible = false
+		isVisible = false
+	else
+		LABEL.Visible = true
 
-        LABEL.TextTransparency = 0
-        isVisible = true
-    end
+		local growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
+		})
+		growVert:Play()
+		growVert.Completed:Wait()
+
+		local growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+			Size = originalSize
+		})
+		growHoriz:Play()
+		growHoriz.Completed:Wait()
+
+		LABEL.TextTransparency = 0
+		isVisible = true
+	end
 end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
-    if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
-        toggleLabelVisibility()
-    end
+	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
+		toggleLabelVisibility()
+	end
 end)
 -- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
