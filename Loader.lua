@@ -265,12 +265,12 @@ spawn(function()
 	end
 end)
 -- color for iy
-local whiteiy = Color3.fromRGB(245, 99, 66)
-local reddishiy = Color3.fromRGB(255, 255, 255)
+local reddishiy = Color3.fromRGB(245, 99, 66)
+local whiteiy = Color3.fromRGB(255, 255, 255)
 
 spawn(function()
 	while true do
-		lerpT = lerpT + direction * 0.001
+		lerpT = lerpT + direction * 0.01
 
 		if lerpT >= 1 then
 			lerpT = 1
@@ -279,12 +279,12 @@ spawn(function()
 			lerpT = 0
 			direction = 1
 		end
-		local interpolated = whiteiy:lerp(reddishiy, lerpT)
+
+		local interpolated = reddishiy:lerp(whiteiy, lerpT)
 		IY.TextColor3 = interpolated
 		wait(0.02)
 	end
 end)
-
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
