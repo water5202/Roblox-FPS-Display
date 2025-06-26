@@ -38,12 +38,12 @@ local var = false
 
 -- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
-UI.Name = "55 49"
+UI.Name = "53637265656e4775690d0a"
 UI.Parent = PLAYERGUI
 UI.ResetOnSpawn = false
 
 local LABEL = Instance.new("TextButton")
-LABEL.Name = "54 45 58 54 20 4c 41 42 45 4c"
+LABEL.Name = "54657874427574746f6e"
 LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 LABEL.Parent = UI
 LABEL.Size = UDim2.new(0, 130, 0, 60)
@@ -56,7 +56,7 @@ LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.AutoButtonColor = false
 
 local toolbar = Instance.new("Frame")
-toolbar.Name = "54 45 58 54 20 4c 41 42 45 4c 01"
+toolbar.Name = "4672616d650d0a"
 toolbar.Parent = LABEL
 toolbar.Size = UDim2.new(0, 150, 0, 25)
 toolbar.Position = UDim2.new(0, 120, 0, -15)
@@ -65,7 +65,7 @@ toolbar.Visible = false
 toolbar.Transparency = 0.5
 
 local close = Instance.new("TextButton")
-close.Name = "54 45 58 54 20 4c 41 42 45 4c 02"
+close.Name = "54657874427574746f6e 1"
 close.Parent = toolbar
 close.Text = "X"
 close.TextColor3 = Color3.new(255, 255, 255)
@@ -74,8 +74,12 @@ close.BackgroundTransparency = 1
 close.Position = UDim2.new(0, 130, 0, 5)
 close.Visible = false
 
+local DragDetector = Instance.new("UIDragDetector")
+DragDetector.Name = "44726167204465746563746f7"
+DragDetector.Parent = LABEL
+
 local RGB = Instance.new("TextButton")
-RGB.Name = "54 45 58 54 20 4c 41 42 45 4c 03"
+RGB.Name = "54657874427574746f6e 3"
 RGB.Parent = toolbar
 RGB.Text = "R"
 RGB.TextColor3 = Color3.new(255, 255, 255)
@@ -85,7 +89,7 @@ RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
 
 ------------------------------------ exclude this in studio
-local IY = Instance.new("TextButton")
+local IY = Instance.new("54657874427574746f6e 2")
 IY.Name = "54 45 58 54 20 4c 41 42 45 4c 04"
 IY.Parent = toolbar
 IY.Text = "IY"
