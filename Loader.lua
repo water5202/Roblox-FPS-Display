@@ -280,7 +280,7 @@ spawn(function()
 			direction = 1
 		end
 
-		local interpolated = reddishiy:lerpT(whiteiy, lerpT)
+		local interpolated = reddishiy:lerp(whiteiy, lerpT)
 		IY.TextColor3 = interpolated
 		wait(0.1)
 	end
