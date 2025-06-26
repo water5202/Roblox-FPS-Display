@@ -72,8 +72,7 @@ IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
 ------------------------------------
-
-LABEL.MouseButton2Click:Connect(function()
+function toggleToolbar()
 	local function fade(object, targetTransparency, duration)
 		if object and object:IsA("TextButton") then
 			TweenService:Create(object, TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -81,7 +80,7 @@ LABEL.MouseButton2Click:Connect(function()
 			}):Play()
 		end
 	end
-	
+
 	if not toolbar.Visible then
 		toolbar.Size = UDim2.new(0, 0, 0, 25)
 		toolbar.Visible = true
@@ -98,7 +97,6 @@ LABEL.MouseButton2Click:Connect(function()
 		fade(close, 0, 1.5)
 		fade(RGB, 0, 1.5)
 		fade(IY, 0, 1.5)
-
 	else
 		fade(close, 1, 0.3)
 		fade(RGB, 1, 0.3)
@@ -115,6 +113,14 @@ LABEL.MouseButton2Click:Connect(function()
 			RGB.Visible = false
 			IY.Visible = false
 		end)
+	end
+end
+
+LABEL.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton2 then
+		toggleToolbar()
+	elseif input.UserInputType == Enum.UserInputType.Touch then
+		toggleToolbar()
 	end
 end)
 -----------------------------
