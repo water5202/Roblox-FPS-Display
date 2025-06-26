@@ -263,8 +263,8 @@ spawn(function()
 	end
 end)
 -- color for iy
-local color1 = Color3.fromRGB(245, 99, 66)
-local color2 = Color3.fromRGB(255, 255, 255)
+local whiteiy = Color3.fromRGB(245, 99, 66)
+local reddishiy = Color3.fromRGB(255, 255, 255)
 local direction = 1
 
 RunService.RenderStepped:Connect(function(dt)
@@ -278,7 +278,7 @@ RunService.RenderStepped:Connect(function(dt)
 		direction = 1
 	end
 
-	local interpolated = color1:lerp(color2, t)
+	local interpolated = whiteiy:lerp(reddishiy, t)
 	IY.TextColor3 = interpolated
 end)
 -- Notifications
