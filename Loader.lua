@@ -263,18 +263,28 @@ spawn(function()
 	end
 end)
 -- color for iy
-local colorwhite = Color3.fromRGB(245, 99, 66)
-local colorreddish = Color3.fromRGB(255, 255, 255)
-local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
-local toggle = true
+local color1 = Color3.fromRGB(245, 99, 66)
+local color2 = Color3.fromRGB(255, 255, 255)
 
-while true do
-	local targetColor = toggle and color1 or color2
-	local tween = TweenService:Create(IY, tweenInfo, {TextColor3 = targetColor})
-	tween:Play()
-	tween.Completed:Wait()
-	toggle = not toggle
-end
+local t = 0
+local direction = 1
+
+spawn(function()
+	while true do
+		t = t + direction * 0.01
+		if t >= 1 then
+			t = 1
+			direction = -1
+		elseif t <= 0 then
+			t = 0
+			direction = 1
+		end
+
+		local interpolated = color1:lerp(color2, t)
+		IY.TextColor3 = interpolated
+		wait(0.01)
+	end
+end)
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
