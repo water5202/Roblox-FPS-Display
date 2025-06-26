@@ -152,33 +152,40 @@ textSizeConstraint.Parent = LABEL
 textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
+-- closing the fackin gui
+local TweenService = game:GetService("TweenService")
+
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
 			if LABEL.Visible then
-				local tween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					BackgroundTransparency = 1,
-					TextTransparency = 1,
+				local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					Size = UDim2.new(0, 0, LABEL.Size.Y.Scale, LABEL.Size.Y.Offset)
 				})
-				tween:Play()
-				tween.Completed:Connect(function()
-					LABEL.Visible = false
-					LABEL.BackgroundTransparency = 0
-					LABEL.TextTransparency = 0
+				shrinkX:Play()
+				shrinkX.Completed:Connect(function()
+					local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+						Size = UDim2.new(0, 0, 0, 0)
+					})
+					shrinkY:Play()
+					shrinkY.Completed:Connect(function()
+						LABEL.Visible = false
+						LABEL.Size = UDim2.new(0, 130, 0, 60)
+					end)
 				end)
 			else
-				LABEL.BackgroundTransparency = 1
-				LABEL.TextTransparency = 1
+				LABEL.Size = UDim2.new(0, 130, 0, 60)
 				LABEL.Visible = true
-				local tween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					BackgroundTransparency = 0,
-					TextTransparency = 0,
+				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					Size = UDim2.new(0, 130, 0, 60)
 				})
-				tween:Play()
+				LABEL.Size = UDim2.new(0, 0, 0, 0)
+				growY:Play()
 			end
 		end
 	end
 end)
+
 
 -- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
