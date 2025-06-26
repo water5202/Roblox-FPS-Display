@@ -199,8 +199,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 					shrinkX:Play()
 					shrinkX.Completed:Connect(function()
 						local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-							Size = UDim2.new(0, 0, 0, 0),
-							Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
+							Size = UDim2.new(0, 0, 0, 0)
 						})
 						shrinkY:Play()
 						shrinkY.Completed:Connect(function()
@@ -220,7 +219,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 				LABEL.TextStrokeTransparency = 1
 
 				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 0, 0, fullSize.Y.Offset),
+					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset),
 					Position = fullPos
 				})
 				growY:Play()
