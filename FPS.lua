@@ -180,7 +180,7 @@ local fullPos = LABEL.Position
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
-				if toolbar.Visible == true then
+				if toolbar.Visible then
 					toggleToolBar()
 				end
 			if LABEL.Visible then
