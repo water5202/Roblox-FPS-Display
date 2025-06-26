@@ -170,8 +170,6 @@ textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
 -- closing the fackin gui
-local TweenService = game:GetService("TweenService")
-
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
@@ -191,19 +189,23 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 					end)
 				end)
 			else
-				LABEL.Size = UDim2.new(0, 130, 0, 60)
 				LABEL.Visible = true
-				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 130, 0, 60)
-				})
 				LABEL.Size = UDim2.new(0, 0, 0, 0)
+				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					Size = UDim2.new(0, 0, 0, 60)
+				})
+
 				growY:Play()
+				growY.Completed:Connect(function()
+					local growX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+						Size = UDim2.new(0, 130, 0, 60)
+					})
+					growX:Play()
+				end)
 			end
 		end
 	end
 end)
-
-
 -- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
