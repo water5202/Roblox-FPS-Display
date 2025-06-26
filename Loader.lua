@@ -224,8 +224,10 @@ end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
+if toolbar.Visible then	
+toggleToolbar()
+end
 		toggleLabelVisibility()
-		toggleToolbar()
 	end
 end)
 -- Toggle RGB effect with Insert key
