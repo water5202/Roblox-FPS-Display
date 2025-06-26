@@ -187,6 +187,8 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 			end
 
 			if LABEL.Visible then
+				LABEL.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+
 				local fadeOut = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					TextTransparency = 1,
 					TextStrokeTransparency = 1
@@ -217,7 +219,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 				LABEL.Size = UDim2.new(0, 0, 0, 0)
 				LABEL.TextTransparency = 1
 				LABEL.TextStrokeTransparency = 1
-
+				LABEL.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset),
 					Position = fullPos
