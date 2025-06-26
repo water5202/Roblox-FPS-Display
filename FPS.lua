@@ -1,7 +1,11 @@
 -- script made by water.5202
 local LOADED = true
 if loaded == true then
-	return
+	StarterGui:SetCore("SendNotification", {
+	Title = "water.5202",
+	Text = "script is already loaded!",
+	Duration = 5,
+})
 end
 
 setfpscap(32767) 
