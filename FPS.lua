@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local StarterGui = game:GetService("StarterGui")
 local TweenService = game:GetService("TweenService")
-
+local DraggableObject = require(script.Parent.DraggableObject)
 local PLAYER = Players.LocalPlayer
 local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
 
@@ -200,7 +200,9 @@ spawn(function()
 		wait(0.0001)
 	end
 end)
-
+-- drag
+local FrameDrag = DraggableObject.new(UI.LABEL)
+FrameDrag:Enable()
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
