@@ -20,6 +20,7 @@ if PLAYERGUI:FindFirstChild("55 49") then
         Text = "script already loaded",
         Duration = 5,
     })
+	return
 else
 end
 
