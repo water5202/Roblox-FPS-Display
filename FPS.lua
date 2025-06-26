@@ -14,15 +14,15 @@ local TweenService = game:GetService("TweenService")
 local PLAYER = Players.LocalPlayer
 local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
 
-if PLAYERGUI.[55 49] then
-	StarterGui:SetCore("SendNotification", {
-	Title = "Script Handler",
-	Text = "script already loaded",
-	Duration = 5,
-})
+if PLAYERGUI:FindFirstChild("55 49") then
+    StarterGui:SetCore("SendNotification", {
+        Title = "Script Handler",
+        Text = "script already loaded",
+        Duration = 5,
+    })
 else
-	
 end
+
 
 local frameCount = 0
 local elapsedTime = 0
