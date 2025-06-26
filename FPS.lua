@@ -1,5 +1,5 @@
 -- script made by water.5202
-local version = "version 1 - FPSDISPLAY by water.5202 on discord"
+local version = "version 1 - FPSDISPLAY by water.5202"
 local executor = identifyexecutor()
 print(version, executor)
 
