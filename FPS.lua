@@ -1,4 +1,5 @@
 -- script made by water.5202
+setfpscap(32767) 
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
