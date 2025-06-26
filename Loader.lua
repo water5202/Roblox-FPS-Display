@@ -176,69 +176,52 @@ textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
 -- closing the fackin gui
-local fullSize = UDim2.new(0, 130, 0, 60)
-local fullPos = LABEL.Position
+local isClosed = false
+
+local function fadeAndShrinkOut()
+	local fadeTween = TweenService:Create(LABEL, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		TextTransparency = 1,
+		BackgroundTransparency = 1,
+		Size = UDim2.new(0.2, 0, LABEL.Size.Y.Scale, LABEL.Size.Y.Offset)
+	})
+	fadeTween:Play()
+	fadeTween.Completed:Wait()
+
+	local shrinkVertTween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0.2, 0, 0, 0)
+	})
+	shrinkVertTween:Play()
+	shrinkVertTween.Completed:Wait()
+end
+
+local function expandAndFadeIn()
+	local expandVertTween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Size = UDim2.new(0.2, 0, 1, 0)
+	})
+	expandVertTween:Play()
+	expandVertTween.Completed:Wait()
+
+	local expandHorizTween = TweenService:Create(LABEL, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Size = UDim2.new(1, 0, 1, 0),
+		TextTransparency = 0,
+		BackgroundTransparency = 0
+	})
+	expandHorizTween:Play()
+	expandHorizTween.Completed:Wait()
+end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
-	if not gameProcessedEvent then
-		if input.KeyCode == Enum.KeyCode.LeftBracket then
-			if toolbar.Visible then
-				toggleToolbar()
-			end
-
-			if LABEL.Visible then
-				LABEL.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-
-				local fadeOut = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					TextTransparency = 1,
-					TextStrokeTransparency = 1
-				})
-				fadeOut:Play()
-				fadeOut.Completed:Connect(function()
-					local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset)
-					})
-					shrinkX:Play()
-					shrinkX.Completed:Connect(function()
-						local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-							Size = UDim2.new(0, 0, 0, 0)
-						})
-						shrinkY:Play()
-						shrinkY.Completed:Connect(function()
-							LABEL.Visible = false
-							LABEL.Position = fullPos
-							LABEL.Size = fullSize
-							LABEL.TextTransparency = 0
-							LABEL.TextStrokeTransparency = 0
-						end)
-					end)
-				end)
-			else
-				LABEL.Visible = true
-				LABEL.Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
-				LABEL.Size = UDim2.new(0, 0, 0, 0)
-				LABEL.TextTransparency = 1
-				LABEL.TextStrokeTransparency = 1
-				LABEL.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset),
-					Position = fullPos
-				})
-				growY:Play()
-				growY.Completed:Connect(function()
-					local growX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Size = fullSize
-					})
-					growX:Play()
-					growX.Completed:Connect(function()
-						local fadeIn = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-							TextTransparency = 0,
-							TextStrokeTransparency = 1
-						})
-						fadeIn:Play()
-					end)
-				end)
-			end
+	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
+		if isClosed then
+			UI.Visible = true
+			expandAndFadeIn()
+			toggleToolbar()
+			isClosed = false
+		else
+			fadeAndShrinkOut()
+			toggleToolbar()
+			UI.Visible = false
+			isClosed = true
 		end
 	end
 end)
