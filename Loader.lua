@@ -270,7 +270,7 @@ local whiteiy = Color3.fromRGB(255, 255, 255)
 
 spawn(function()
 	while true do
-		lerpT = lerpT + direction * 0.000001
+		lerpT = lerpT + direction * 0.1
 
 		if lerpT >= 1 then
 			lerpT = 1
@@ -282,7 +282,7 @@ spawn(function()
 
 		local interpolated = reddishiy:lerpT(whiteiy, lerpT)
 		IY.TextColor3 = interpolated
-		wait(0.02)
+		wait(0.1)
 	end
 end)
 -- Notifications
