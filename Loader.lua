@@ -225,7 +225,7 @@ end)
 -- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
-		if input.KeyCode == Enum.KeyCode.Insert then
+		if input.KeyCode == Enum.KeyCode.RightBracket then
 			var = not var
 		end
 	end
@@ -299,6 +299,6 @@ StarterGui:SetCore("SendNotification", {
 })
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
-	Text = "Press Insert to toggle RGB and [ for UI!",
+	Text = "Press ] to toggle RGB and [ for UI!",
 	Duration = 5,
 })
