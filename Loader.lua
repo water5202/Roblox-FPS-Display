@@ -148,6 +148,9 @@ LABEL.InputBegan:Connect(function(input)
 end)
 -----------------------------
 close.MouseButton1Click:Connect(function()
+	toggleToolbar()
+	toggleLabelVisibility()
+	wait(0.9)
 	UI:Destroy()
 end)
 
@@ -220,6 +223,7 @@ end
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
 		toggleLabelVisibility()
+		toggleToolbar()
 	end
 end)
 -- Toggle RGB effect with Insert key
