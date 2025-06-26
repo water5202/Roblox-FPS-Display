@@ -181,41 +181,41 @@ local originalSize = LABEL.Size
 
 function toggleLabelVisibility()
     if isVisible then
+        LABEL.TextTransparency = 1
         local shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.2, originalSize.Y.Scale, originalSize.Y.Offset)
+            Size = UDim2.new(0, originalSize.X.Offset * 0.1, originalSize.Y.Scale, originalSize.Y.Offset)
         })
         shrinkHoriz:Play()
         shrinkHoriz.Completed:Wait()
-        
+
         local shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.2, 0, 0)
+            Size = UDim2.new(0, originalSize.X.Offset * 0.1, 0, 0)
         })
         shrinkVert:Play()
         shrinkVert.Completed:Wait()
-        
+
         isVisible = false
     else
         local growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.2, originalSize.Y.Scale, originalSize.Y.Offset)
+            Size = UDim2.new(0, originalSize.X.Offset * 0.1, originalSize.Y.Scale, originalSize.Y.Offset)
         })
         growVert:Play()
         growVert.Completed:Wait()
-        
+
         local growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
             Size = originalSize
         })
         growHoriz:Play()
         growHoriz.Completed:Wait()
-        
+
+        LABEL.TextTransparency = 0
         isVisible = true
     end
 end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
-    if not gameProcessedEvent then
-        if input.KeyCode == Enum.KeyCode.LeftBracket then
-            toggleLabelVisibility()
-        end
+    if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
+        toggleLabelVisibility()
     end
 end)
 -- Toggle RGB effect with Insert key
