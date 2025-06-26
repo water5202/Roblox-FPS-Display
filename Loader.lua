@@ -87,8 +87,8 @@ RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
 
 ------------------------------------ exclude this in studio
-local IY = Instance.new("54657874427574746f6e 2")
-IY.Name = "54 45 58 54 20 4c 41 42 45 4c 04"
+local IY = Instance.new("TextButton")
+IY.Name = "54657874427574746f6e 2"
 IY.Parent = toolbar
 IY.Text = "IY"
 IY.TextColor3 = Color3.fromRGB(245, 99, 66)
