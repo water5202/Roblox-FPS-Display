@@ -30,8 +30,10 @@ end
 setfpscap(32767) 
 local frameCount = 0
 local elapsedTime = 0
+local direction = 1
 local highestFPS = 0
-local t = 0
+local rainbowT = 0
+local lerpT = 0
 local var = true
 
 -- UI ELEMENTS
@@ -248,39 +250,38 @@ end)
 -- RGB color animation loop
 spawn(function()
 	while true do
-		if var == true then
-			t = t + 0.1
-			local r = math.sin(t) * 127 + 128
-			local g = math.sin(t + 2) * 127 + 128
-			local b = math.sin(t + 4) * 127 + 128
+		if var then
+			rainbowT = rainbowT + 0.1
+			local r = math.sin(rainbowT) * 127 + 128
+			local g = math.sin(rainbowT + 2) * 127 + 128
+			local b = math.sin(rainbowT + 4) * 127 + 128
 			LABEL.TextColor3 = Color3.fromRGB(r, g, b)
 			RGB.TextColor3 = Color3.fromRGB(r, g, b)
 		else
 			LABEL.TextColor3 = Color3.fromRGB(255, 255, 255)
 			RGB.TextColor3 = Color3.fromRGB(255, 255, 255)
 		end
-		wait(0.0001)
+		wait(0.05) -- Lowered frequency for performance
 	end
 end)
 -- color for iy
-local whiteiy = Color3.fromRGB(245, 99, 66)
-local reddishiy = Color3.fromRGB(255, 255, 255)
-local direction = 1
+spawn(function()
+	while true do
+		lerpT = lerpT + direction * 0.001
 
-RunService.RenderStepped:Connect(function(dt)
-	t = t + direction * dt * 0.5 -- Adjust speed with multiplier
-
-	if t >= 1 then
-		t = 1
-		direction = -1
-	elseif t <= 0 then
-		t = 0
-		direction = 1
+		if lerpT >= 1 then
+			lerpT = 1
+			direction = -1
+		elseif lerpT <= 0 then
+			lerpT = 0
+			direction = 1
+		end
+		local interpolated = whiteiy:lerp(reddishiy, lerpT)
+		IY.TextColor3 = interpolated
+		wait(0.02)
 	end
-
-	local interpolated = whiteiy:lerp(reddishiy, t)
-	IY.TextColor3 = interpolated
 end)
+
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
