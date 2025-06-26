@@ -1,4 +1,9 @@
 -- script made by water.5202
+local LOADED = true
+if loaded == true then
+	return
+end
+
 setfpscap(32767) 
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
