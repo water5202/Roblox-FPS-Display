@@ -1,7 +1,5 @@
 -- script made by water.5202
-local version = "version 1 - FPSDISPLAY by water.5202"
-local executor = identifyexecutor()
-print(version, executor)
+local version = "version 1.0.0"
 
 local CAP = nil
 CAP = getfpscap()
