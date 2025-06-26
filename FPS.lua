@@ -6,9 +6,11 @@ if getgenv().LOADED then
 		Text = "script is already loaded!",
 		Duration = 5,
 	})
+	return
 else
 	getgenv().LOADED = true
 end
+
 
 CAP = getfpscap()
 print("Current Max FPS is: ".. CAP)
