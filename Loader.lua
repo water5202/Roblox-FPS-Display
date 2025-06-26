@@ -265,8 +265,6 @@ end)
 -- color for iy
 local color1 = Color3.fromRGB(245, 99, 66)
 local color2 = Color3.fromRGB(255, 255, 255)
-
-local t = 0
 local direction = 1
 
 spawn(function()
@@ -282,7 +280,7 @@ spawn(function()
 
 		local interpolated = color1:lerp(color2, t)
 		IY.TextColor3 = interpolated
-		wait(0.01)
+		wait(0.000001)
 	end
 end)
 -- Notifications
