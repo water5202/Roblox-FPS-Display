@@ -12,6 +12,7 @@ end
 
 CAP = getfpscap()
 print("Current Max FPS is: ".. CAP)
+task.wait(0.7)
 print("FPS set to Unlimited because mobile has poor performance")
 setfpscap(32767) 
 local RunService = game:GetService("RunService")
