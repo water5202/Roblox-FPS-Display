@@ -262,8 +262,19 @@ spawn(function()
 		wait(0.0001)
 	end
 end)
--- drag
+-- color for iy
+local colorwhite = Color3.fromRGB(245, 99, 66)
+local colorreddish = Color3.fromRGB(255, 255, 255)
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+local toggle = true
 
+while true do
+	local targetColor = toggle and color1 or color2
+	local tween = TweenService:Create(IY, tweenInfo, {TextColor3 = targetColor})
+	tween:Play()
+	tween.Completed:Wait()
+	toggle = not toggle
+end
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
