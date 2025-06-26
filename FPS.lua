@@ -4,7 +4,6 @@ local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local StarterGui = game:GetService("StarterGui")
 local TweenService = game:GetService("TweenService")
-local DraggableObject = require(script.Parent.DraggableObject)
 local PLAYER = Players.LocalPlayer
 local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
 
@@ -198,6 +197,7 @@ spawn(function()
 	end
 end)
 -- drag
+local DraggableObject = require(LABEL.DraggableObject)
 local FrameDrag = DraggableObject.new(LABEL)
 FrameDrag:Enable()
 -- Notifications
