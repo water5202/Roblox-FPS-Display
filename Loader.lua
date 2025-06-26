@@ -182,30 +182,42 @@ local fullPos = LABEL.Position
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
-				if toolbar.Visible then
-					toggleToolbar()
-				end
+			if toolbar.Visible then
+				toggleToolbar()
+			end
+
 			if LABEL.Visible then
-				local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset)
+				local fadeOut = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					TextTransparency = 1,
+					TextStrokeTransparency = 1
 				})
-				shrinkX:Play()
-				shrinkX.Completed:Connect(function()
-					local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-						Size = UDim2.new(0, 0, 0, 0),
-						Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
+				fadeOut:Play()
+				fadeOut.Completed:Connect(function()
+					local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+						Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset)
 					})
-					shrinkY:Play()
-					shrinkY.Completed:Connect(function()
-						LABEL.Visible = false
-						LABEL.Position = fullPos
-						LABEL.Size = fullSize
+					shrinkX:Play()
+					shrinkX.Completed:Connect(function()
+						local shrinkY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+							Size = UDim2.new(0, 0, 0, 0),
+							Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
+						})
+						shrinkY:Play()
+						shrinkY.Completed:Connect(function()
+							LABEL.Visible = false
+							LABEL.Position = fullPos
+							LABEL.Size = fullSize
+							LABEL.TextTransparency = 0
+							LABEL.TextStrokeTransparency = 0
+						end)
 					end)
 				end)
 			else
 				LABEL.Visible = true
 				LABEL.Position = fullPos + UDim2.new(0, 0, 0, fullSize.Y.Offset)
 				LABEL.Size = UDim2.new(0, 0, 0, 0)
+				LABEL.TextTransparency = 1
+				LABEL.TextStrokeTransparency = 1
 
 				local growY = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.new(0, 0, 0, fullSize.Y.Offset),
@@ -217,6 +229,13 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 						Size = fullSize
 					})
 					growX:Play()
+					growX.Completed:Connect(function()
+						local fadeIn = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+							TextTransparency = 0,
+							TextStrokeTransparency = 0
+						})
+						fadeIn:Play()
+					end)
 				end)
 			end
 		end
