@@ -168,17 +168,17 @@ IY.MouseButton1Click:Connect(function()
 end)
 
 local UICORNER = Instance.new("UICorner")
-UICORNER.Name = "55 49 43 75 72 65 6e 6f 72"
+UICORNER.Name = "5549436f726e6572"
 UICORNER.Parent = LABEL
 UICORNER.CornerRadius = UDim.new(0, 10)
 
 local UICORNER2 = Instance.new("UICorner")
-UICORNER2.Name = "55 49 43 75 72 65 6e 6f 72 1"
+UICORNER2.Name = "5549436f726e6572 1"
 UICORNER2.Parent = toolbar
 UICORNER2.CornerRadius = UDim.new(0, 10)
 
 local textSizeConstraint = Instance.new("UITextSizeConstraint")
-textSizeConstraint.Name = "74 65 78 74 53 69 7a 65 43 6f 6e 73 74 72 61 69 6e 74"
+textSizeConstraint.Name = "55495465787453697a65436f6e73747261696e74"
 textSizeConstraint.Parent = LABEL
 textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
