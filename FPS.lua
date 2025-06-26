@@ -31,8 +31,6 @@ LABEL.Font = Enum.Font.RobotoMono
 LABEL.TextScaled = true
 LABEL.Text = "nul/nul"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
-LABEL.Active = true
-LABEL.Draggable = true
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "54 45 58 54 20 4c 41 42 45 4c 01"
@@ -42,8 +40,6 @@ toolbar.Position = UDim2.new(0, 120, 0, -15)
 toolbar.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 toolbar.Visible = false
 toolbar.Transparency = 0.5
-toolbar.Active = true
-toolbar.Draggable = false
 
 local close = Instance.new("TextButton")
 close.Name = "54 45 58 54 20 4c 41 42 45 4c 02"
