@@ -148,7 +148,9 @@ LABEL.InputBegan:Connect(function(input)
 end)
 -----------------------------
 close.MouseButton1Click:Connect(function()
+	if toolbar.Visible then	
 	toggleToolbar()
+	end
 	toggleLabelVisibility()
 	wait(0.9)
 	UI:Destroy()
