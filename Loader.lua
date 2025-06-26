@@ -265,6 +265,9 @@ spawn(function()
 	end
 end)
 -- color for iy
+local whiteiy = Color3.fromRGB(245, 99, 66)
+local reddishiy = Color3.fromRGB(255, 255, 255)
+
 spawn(function()
 	while true do
 		lerpT = lerpT + direction * 0.001
