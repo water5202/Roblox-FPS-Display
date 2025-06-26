@@ -180,6 +180,7 @@ local fullPos = LABEL.Position
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.LeftBracket then
+				toggleToolbar()
 			if LABEL.Visible then
 				local shrinkX = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.new(0, 0, fullSize.Y.Scale, fullSize.Y.Offset)
