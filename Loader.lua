@@ -233,7 +233,7 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 					growX.Completed:Connect(function()
 						local fadeIn = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 							TextTransparency = 0,
-							TextStrokeTransparency = 0
+							TextStrokeTransparency = 1
 						})
 						fadeIn:Play()
 					end)
