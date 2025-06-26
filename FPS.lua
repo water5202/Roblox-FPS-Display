@@ -31,6 +31,7 @@ LABEL.Font = Enum.Font.RobotoMono
 LABEL.TextScaled = true
 LABEL.Text = "nul/nul"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
+LABEL.AutoButtonColor = false
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "54 45 58 54 20 4c 41 42 45 4c 01"
