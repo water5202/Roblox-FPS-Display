@@ -176,54 +176,47 @@ textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
 -- closing the fackin gui
-local isClosed = false
+local isVisible = true
+local originalSize = LABEL.Size
 
-local function fadeAndShrinkOut()
-	local fadeTween = TweenService:Create(LABEL, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-		TextTransparency = 1,
-		BackgroundTransparency = 1,
-		Size = UDim2.new(0.2, 0, LABEL.Size.Y.Scale, LABEL.Size.Y.Offset)
-	})
-	fadeTween:Play()
-	fadeTween.Completed:Wait()
-
-	local shrinkVertTween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-		Size = UDim2.new(0.2, 0, 0, 0)
-	})
-	shrinkVertTween:Play()
-	shrinkVertTween.Completed:Wait()
-end
-
-local function expandAndFadeIn()
-	local expandVertTween = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-		Size = UDim2.new(0.2, 0, 1, 0)
-	})
-	expandVertTween:Play()
-	expandVertTween.Completed:Wait()
-
-	local expandHorizTween = TweenService:Create(LABEL, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-		Size = UDim2.new(1, 0, 1, 0),
-		TextTransparency = 0,
-		BackgroundTransparency = 0
-	})
-	expandHorizTween:Play()
-	expandHorizTween.Completed:Wait()
+function toggleLabelVisibility()
+    if isVisible then
+        local shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.2, originalSize.Y.Scale, originalSize.Y.Offset)
+        })
+        shrinkHoriz:Play()
+        shrinkHoriz.Completed:Wait()
+        
+        local shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.2, 0, 0)
+        })
+        shrinkVert:Play()
+        shrinkVert.Completed:Wait()
+        
+        isVisible = false
+    else
+        local growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.2, originalSize.Y.Scale, originalSize.Y.Offset)
+        })
+        growVert:Play()
+        growVert.Completed:Wait()
+        
+        local growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = originalSize
+        })
+        growHoriz:Play()
+        growHoriz.Completed:Wait()
+        
+        isVisible = true
+    end
 end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
-	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
-		if isClosed then
-			UI.Visible = true
-			expandAndFadeIn()
-			toggleToolbar()
-			isClosed = false
-		else
-			fadeAndShrinkOut()
-			toggleToolbar()
-			UI.Visible = false
-			isClosed = true
-		end
-	end
+    if not gameProcessedEvent then
+        if input.KeyCode == Enum.KeyCode.LeftBracket then
+            toggleLabelVisibility()
+        end
+    end
 end)
 -- Toggle RGB effect with Insert key
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
