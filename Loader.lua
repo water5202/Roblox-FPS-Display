@@ -65,8 +65,8 @@ close.Visible = false
 local DragDetector = Instance.new("UIDragDetector")
 DragDetector.Name = "44726167204465746563746f7"
 DragDetector.Parent = LABEL
-DragDetector.CursorIcon = "rbxassetid://placeholder"
-DragDetector.ActivatedCursorIcon = "rbxassetid://placeholder1"
+DragDetector.CursorIcon = "rbxassetid://3147373647"
+DragDetector.ActivatedCursorIcon = "rbxassetid://3147373647"
 
 local RGB = Instance.new("TextButton")
 RGB.Name = "54657874427574746f6e 3"
