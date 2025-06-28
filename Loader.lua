@@ -263,7 +263,7 @@ spawn(function()
 			LABEL.TextColor3 = Color3.fromRGB(255, 255, 255)
 			RGB.TextColor3 = Color3.fromRGB(255, 255, 255)
 		end
-		wait(0.05) -- Lowered frequency for performance
+		wait(0.05)
 	end
 end)
 -- color for iy
