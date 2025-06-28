@@ -70,22 +70,6 @@ local DragDetector = Instance.new("UIDragDetector")
 DragDetector.Name = "44726167204465746563746f7"
 DragDetector.Parent = LABEL
 
-LABEL.MouseEnter:Connect(function()
-    UIS.MouseIcon = "rbxassetid://3147373647"
-end)
-
-LABEL.MouseLeave:Connect(function()
-    UIS.MouseIcon = ""
-end)
-
-DragDetector.DragStarted:Connect(function()
-    UIS.MouseIcon = "rbxassetid://3147373647"
-end)
-
-DragDetector.DragEnded:Connect(function()
-    UIS.MouseIcon = ""
-end)
-
 local RGB = Instance.new("TextButton")
 RGB.Name = "54657874427574746f6e 3"
 RGB.Parent = toolbar
