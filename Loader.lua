@@ -3,8 +3,7 @@ local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local StarterGui = game:GetService("StarterGui")
 local TweenService = game:GetService("TweenService")
-local PLAYER = Players.LocalPlayer
-local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
+local CoreGUI = workspace.CoreGui
 local frameCount = 0
 local elapsedTime = 0
 local direction = 1
@@ -13,7 +12,7 @@ local rainbowT = 0
 local lerpT = 0
 local var = false
 
-if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
+if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
         Title = "Interface",
         Text = "script already loaded",
@@ -26,7 +25,7 @@ end
 -- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
 UI.Name = "53637265656e4775690d0a"
-UI.Parent = PLAYERGUI
+UI.Parent = CoreGUI
 UI.ResetOnSpawn = false
 
 local version = Instance.new("IntValue")
