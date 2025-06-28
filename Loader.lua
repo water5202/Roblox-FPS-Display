@@ -8,7 +8,7 @@ local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
 
 if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
-        Title = "Script Handler",
+        Title = "Interface",
         Text = "script already loaded",
         Duration = 5,
     })
@@ -16,7 +16,6 @@ if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
 else
 end
 
-setfpscap(32767) 
 local frameCount = 0
 local elapsedTime = 0
 local direction = 1
