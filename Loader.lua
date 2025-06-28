@@ -295,12 +295,12 @@ StarterGui:SetCore("SendNotification", {
 })
 
 StarterGui:SetCore("SendNotification", {
-	Title = "water.5202",
+	Title = "Interface",
 	Text = "Toggling UI or RGB does not work on mobile!",
 	Duration = 5,
 })
 StarterGui:SetCore("SendNotification", {
-	Title = "water.5202",
+	Title = "Interface",
 	Text = "Press ] to toggle RGB and [ for UI!",
 	Duration = 5,
 })
