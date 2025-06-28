@@ -292,7 +292,7 @@ spawn(function()
 	end
 end)
 -- version checker
-if Version.Value ~= 1.0.1 then
+if Version.Value ~= 101 then
 	StarterGui:SetCore("SendNotification", {
 	Title = "Interface",
 	Text = "Outdated Version",
