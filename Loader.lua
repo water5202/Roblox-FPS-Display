@@ -30,6 +30,10 @@ UI.Name = "53637265656e4775690d0a"
 UI.Parent = PLAYERGUI
 UI.ResetOnSpawn = false
 
+local version = Instance.new("IntValue")
+version.Name = "76657273696f6e"
+version.Value = "1.0.1"
+
 local LABEL = Instance.new("TextButton")
 LABEL.Name = "54657874427574746f6e"
 LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
@@ -287,6 +291,15 @@ spawn(function()
 		wait(0.1)
 	end
 end)
+-- version checker
+if Version.Value ~= "1.0.1" then
+	StarterGui:SetCore("SendNotification", {
+	Title = "Interface",
+	Text = "Outdated Version",
+	Duration = 5,
+})
+	return
+end
 -- Notifications
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
