@@ -5,6 +5,13 @@ local StarterGui = game:GetService("StarterGui")
 local TweenService = game:GetService("TweenService")
 local PLAYER = Players.LocalPlayer
 local PLAYERGUI = PLAYER:WaitForChild("PlayerGui")
+local frameCount = 0
+local elapsedTime = 0
+local direction = 1
+local highestFPS = 0
+local rainbowT = 0
+local lerpT = 0
+local var = false
 
 if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
@@ -15,14 +22,6 @@ if PLAYERGUI:FindFirstChild("53637265656e4775690d0a") then
 	return
 else
 end
-
-local frameCount = 0
-local elapsedTime = 0
-local direction = 1
-local highestFPS = 0
-local rainbowT = 0
-local lerpT = 0
-local var = false
 
 -- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
