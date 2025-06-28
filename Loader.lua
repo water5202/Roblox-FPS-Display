@@ -69,8 +69,22 @@ close.Visible = false
 local DragDetector = Instance.new("UIDragDetector")
 DragDetector.Name = "44726167204465746563746f7"
 DragDetector.Parent = LABEL
-DragDetector.CursorIcon = "rbxassetid://3147373647"
-DragDetector.ActivatedCursorIcon = "rbxassetid://3147373647"
+
+LABEL.MouseEnter:Connect(function()
+    UserInputService.MouseIcon = "rbxassetid://3147373647"
+end)
+
+LABEL.MouseLeave:Connect(function()
+    UserInputService.MouseIcon = ""
+end)
+
+DragDetector.DragStarted:Connect(function()
+    UserInputService.MouseIcon = "rbxassetid://3147373647"
+end)
+
+DragDetector.DragEnded:Connect(function()
+    UserInputService.MouseIcon = ""
+end)
 
 local RGB = Instance.new("TextButton")
 RGB.Name = "54657874427574746f6e 3"
