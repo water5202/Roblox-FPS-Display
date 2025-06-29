@@ -1,5 +1,4 @@
 Manually created the UI</br>
-Script soon will be obfuscated</br>
 #
 loadstring(game:HttpGet("https://raw.githubusercontent.com/water5202/Roblox-FPS-Display/refs/heads/main/Loader.lua"))()
 </br>
