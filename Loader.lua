@@ -34,6 +34,7 @@ UI.ResetOnSpawn = false
 local version = Instance.new("IntValue")
 version.Name = "version"
 version.Value = 102
+print(version.Value)
 
 local LABEL = Instance.new("TextButton")
 LABEL.Name = "54657874427574746f6e"
