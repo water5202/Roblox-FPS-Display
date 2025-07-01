@@ -45,6 +45,7 @@ UITOGGLE.Size = UDim2.new(0, 110, 0, 50)
 UITOGGLE.Position = UDim2.new(0, 9, 0, 127)
 UITOGGLE.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOGGLE.AutoButtonColor = false
+UITOGGLE.Font = Enum.Font.RobotoMono
 
 local LABEL = Instance.new("TextButton")
 LABEL.Name = "54657874427574746f6e"
