@@ -122,15 +122,7 @@ ESP.Visible = false
 ESP.Font = Enum.Font.RobotoMono
 ESP.TextScaled = true
 
-local anim = false
-
-
 function toggleToolbar()
-if anim then
-return
-end
-
-anim = true
 	local function fade(object, targetTransparency, duration)
 		if object and object:IsA("TextButton") then
 			TweenService:Create(object, TweenInfo.new(duration, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -292,10 +284,6 @@ local isVisible = true
 local originalSize = LABEL.Size
 
 function toggleLabelVisibility()
-if anim then
-return
-end
-anim = true
 	if isVisible then
 		LABEL.TextTransparency = 1
 
