@@ -251,7 +251,7 @@ textSizeConstraint6.MinTextSize = 16
 
 spawn(function()
     while true do
-        wait(0.7)
+        task.wait(0.1)
         if espval then
             for _, player in pairs(Players:GetPlayers()) do
                 if player ~= localPlayer then
