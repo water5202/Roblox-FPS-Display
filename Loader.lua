@@ -16,6 +16,7 @@ local rainbowT = 0
 local lerpT = 0
 local var = false
 local espval = false
+local localplayer = Players.Localplayer
 
 if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
