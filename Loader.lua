@@ -48,12 +48,6 @@ LABEL.Text = "placeholder"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.AutoButtonColor = false
 
-local UISTROKE = Instance.new("UIStroke")
-UISTROKE.Name = "55495374726f6b65"
-UISTROKE.Parent = LABEL
-UISTROKE.Thickness = 1.2
-UISTROKE.Transparency = 0.6
-
 local toolbar = Instance.new("Frame")
 toolbar.Name = "4672616d650d0a"
 toolbar.Parent = LABEL
@@ -165,6 +159,14 @@ end)
 IY.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "ShadowStroke"
+UIStroke.Parent = LABEL
+UIStroke.Thickness = 1.2
+UIStroke.Transparency = 0.75
+UIStroke.Color = Color3.fromRGB(0, 0, 0)
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
 local UICORNER = Instance.new("UICorner")
 UICORNER.Name = "5549436f726e6572"
