@@ -45,10 +45,10 @@ LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.AutoButtonColor = false
 
 local UISTROKE = Instance.new("UIStroke")
-UIStroke.Name = "55495374726f6b65"
+UISTROKE.Name = "55495374726f6b65"
 UISTROKE.Parent = LABEL
 UISTROKE.Thickness = 1.2
-UIStroke.Transparency = 0.6
+UISTROKE.Transparency = 0.6
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "4672616d650d0a"
