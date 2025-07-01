@@ -237,7 +237,7 @@ textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
-local textSizeConstraint2 = Instance.new("UITextSizeConstraint")
+local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
 textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint3.Parent = toolbar
 textSizeConstraint3.MaxTextSize = 18
