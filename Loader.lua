@@ -170,29 +170,48 @@ IY.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Name = "ShadowStroke"
-UIStroke.Parent = LABEL
-UIStroke.Thickness = 1.2
-UIStroke.Transparency = 0.75
-UIStroke.Color = Color3.fromRGB(0, 0, 0)
-UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local UIStroke1 = Instance.new("UIStroke")
+UIStroke1.Name = "1"
+UIStroke1.Parent = LABEL
+UIStroke1.Thickness = 1.2
+UIStroke1.Transparency = 0.75
+UIStroke1.Color = Color3.fromRGB(0, 0, 0)
+UIStroke1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
-local UICORNER = Instance.new("UICorner")
-UICORNER.Name = "5549436f726e6572"
-UICORNER.Parent = LABEL
-UICORNER.CornerRadius = UDim.new(0, 10)
+local UIStroke2 = Instance.new("UIStroke")
+UIStroke2.Name = "2"
+UIStroke2.Parent = LABEL
+UIStroke2.Thickness = 1.2
+UIStroke2.Transparency = 0.75
+UIStroke2.Color = Color3.fromRGB(0, 0, 0)
+UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+local UICORNER1 = Instance.new("UICorner")
+UICORNER1.Name = "5549436f726e6572 1"
+UICORNER1.Parent = LABEL
+UICORNER1.CornerRadius = UDim.new(0, 10)
 
 local UICORNER2 = Instance.new("UICorner")
-UICORNER2.Name = "5549436f726e6572 1"
+UICORNER2.Name = "5549436f726e6572 2"
 UICORNER2.Parent = toolbar
 UICORNER2.CornerRadius = UDim.new(0, 10)
 
-local textSizeConstraint = Instance.new("UITextSizeConstraint")
-textSizeConstraint.Name = "55495465787453697a65436f6e73747261696e74"
-textSizeConstraint.Parent = LABEL
-textSizeConstraint.MaxTextSize = 18
-textSizeConstraint.MinTextSize = 16
+local UICORNER3 = Instance.new("UICorner")
+UICORNER3.Name = "5549436f726e6572 3"
+UICORNER3.Parent = UITOGGLE
+UICORNER3.CornerRadius = UDim.new(0, 10)
+
+local textSizeConstraint1 = Instance.new("UITextSizeConstraint")
+textSizeConstraint1.Name = "55495465787453697a65436f6e73747261696e74 1"
+textSizeConstraint1.Parent = LABEL
+textSizeConstraint1.MaxTextSize = 18
+textSizeConstraint1.MinTextSize = 16
+
+local textSizeConstraint2 = Instance.new("UITextSizeConstraint")
+textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 2"
+textSizeConstraint2.Parent = LABEL
+textSizeConstraint2.MaxTextSize = 18
+textSizeConstraint2.MinTextSize = 16
 
 local isVisible = true
 local originalSize = LABEL.Size
