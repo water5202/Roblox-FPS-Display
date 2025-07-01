@@ -227,26 +227,26 @@ textSizeConstraint2.MinTextSize = 16
 local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
 textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint3.Parent = close
-textSizeConstraint3.MaxTextSize = 15
-textSizeConstraint3.MinTextSize = 12
+textSizeConstraint3.MaxTextSize = 18
+textSizeConstraint3.MinTextSize = 16
 
 local textSizeConstraint4 = Instance.new("UITextSizeConstraint")
 textSizeConstraint4.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint4.Parent = RGB
-textSizeConstraint4.MaxTextSize = 15
-textSizeConstraint4.MinTextSize = 12
+textSizeConstraint4.MaxTextSize = 18
+textSizeConstraint4.MinTextSize = 16
 
 local textSizeConstraint5 = Instance.new("UITextSizeConstraint")
 textSizeConstraint5.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint5.Parent = ESP
-textSizeConstraint5.MaxTextSize = 15
-textSizeConstraint5.MinTextSize = 12
+textSizeConstraint5.MaxTextSize = 18
+textSizeConstraint5.MinTextSize = 16
 
 local textSizeConstraint6 = Instance.new("UITextSizeConstraint")
 textSizeConstraint6.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint6.Parent = IY
-textSizeConstraint6.MaxTextSize = 15
-textSizeConstraint6.MinTextSize = 12
+textSizeConstraint6.MaxTextSize = 18
+textSizeConstraint6.MinTextSize = 16
 
 while true do
     wait(0.7)
