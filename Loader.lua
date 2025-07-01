@@ -15,6 +15,7 @@ local highestFPS = 0
 local rainbowT = 0
 local lerpT = 0
 local var = false
+local esp = false
 
 if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
@@ -104,6 +105,17 @@ IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
 IY.Font = Enum.Font.RobotoMono
+
+local ESP = Instance.new("TextButton")
+ESP.Name = "54657874427574746f6e 4"
+ESP.Parent = toolbar
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.new(255, 255, 255)
+ESP.Size = UDim2.new(0, 15, 0, 15)
+ESP.BackgroundTransparency = 1
+ESP.Position = UDim2.new(0, 70, 0, 5)
+ESP.Visible = false
+ESP.Font = Enum.Font.RobotoMono
 
 function toggleToolbar()
 	local function fade(object, targetTransparency, duration)
