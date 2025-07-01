@@ -116,7 +116,7 @@ ESP.Text = "ESP"
 ESP.TextColor3 = Color3.new(255, 255, 255)
 ESP.Size = UDim2.new(0, 15, 0, 15)
 ESP.BackgroundTransparency = 1
-ESP.Position = UDim2.new(0, 70, 0, 5)
+ESP.Position = UDim2.new(0, 65, 0, 5)
 ESP.Visible = false
 ESP.Font = Enum.Font.RobotoMono
 ESP.TextScaled = true
@@ -227,26 +227,57 @@ local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
 textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint3.Parent = close
 textSizeConstraint3.MaxTextSize = 15
-textSizeConstraint3.MinTextSize = 13
+textSizeConstraint3.MinTextSize = 12
 
 local textSizeConstraint4 = Instance.new("UITextSizeConstraint")
 textSizeConstraint4.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint4.Parent = RGB
 textSizeConstraint4.MaxTextSize = 15
-textSizeConstraint4.MinTextSize = 13
+textSizeConstraint4.MinTextSize = 12
 
 local textSizeConstraint5 = Instance.new("UITextSizeConstraint")
 textSizeConstraint5.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint5.Parent = ESP
 textSizeConstraint5.MaxTextSize = 15
-textSizeConstraint5.MinTextSize = 13
+textSizeConstraint5.MinTextSize = 12
 
 local textSizeConstraint6 = Instance.new("UITextSizeConstraint")
 textSizeConstraint6.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint6.Parent = IY
 textSizeConstraint6.MaxTextSize = 15
-textSizeConstraint6.MinTextSize = 13
+textSizeConstraint6.MinTextSize = 12
 
+while true do
+    wait(0.7)
+    if espval then
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= localPlayer then
+                local character = player.Character
+                if character and not character:FindFirstChild("ESP") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP"
+                    highlight.Adornee = character
+                    highlight.FillTransparency = 1
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.Parent = character
+                end
+            end
+        end
+    else
+        for _, player in pairs(Players:GetPlayers()) do
+            local character = player.Character
+            if character then
+                local highlight = character:FindFirstChild("ESP")
+                if highlight then
+                    highlight:Destroy()
+                end
+            end
+        end
+    end
+end
+
+
+		
 local isVisible = true
 local originalSize = LABEL.Size
 
@@ -290,11 +321,11 @@ end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent and input.KeyCode == Enum.KeyCode.LeftBracket then
-if toolbar.Visible then	
+if toolbar.Visible then
 toggleToolbar()
 end
-		toggleLabelVisibility()
-	end
+toggleLabelVisibility()
+end
 end)
 
 UITOGGLE.MouseButton1Click:Connect(function()
