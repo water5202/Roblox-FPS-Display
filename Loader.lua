@@ -38,6 +38,7 @@ version.Name = "version"
 version.Value = 102
 print(version.Value)
 
+if UIS.TouchEnabled then
 local UITOGGLE = Instance.new("TextButton")
 UITOGGLE.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69;"
 UITOGGLE.Parent = UI
@@ -48,7 +49,8 @@ UITOGGLE.Position = UDim2.new(0, 9, 0, 127)
 UITOGGLE.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOGGLE.AutoButtonColor = false
 UITOGGLE.Font = Enum.Font.RobotoMono
-
+end
+	
 local LABEL = Instance.new("TextButton")
 LABEL.Name = "54657874427574746f6e"
 LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
