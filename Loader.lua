@@ -15,7 +15,7 @@ local highestFPS = 0
 local rainbowT = 0
 local lerpT = 0
 local var = false
-local esp = false
+local espval = false
 
 if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
@@ -184,6 +184,10 @@ end)
 
 IY.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+ESP.MouseButton1Click:Connect(function()
+espval = not espval 
 end)
 
 local UIStroke1 = Instance.new("UIStroke")
