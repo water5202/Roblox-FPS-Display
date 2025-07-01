@@ -22,7 +22,6 @@ if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
 else
 end
 
--- UI ELEMENTS
 local UI = Instance.new("ScreenGui")
 UI.Name = "53637265656e4775690d0a"
 UI.Parent = CoreGUI
@@ -84,7 +83,6 @@ RGB.BackgroundTransparency = 1
 RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
 
------------------------------------- exclude this in studio
 local IY = Instance.new("TextButton")
 IY.Name = "54657874427574746f6e 2"
 IY.Parent = toolbar
@@ -94,7 +92,7 @@ IY.Size = UDim2.new(0, 15, 0, 15)
 IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
-------------------------------------
+
 function toggleToolbar()
 	local function fade(object, targetTransparency, duration)
 		if object and object:IsA("TextButton") then
@@ -146,7 +144,7 @@ LABEL.InputBegan:Connect(function(input)
 		toggleToolbar()
 	end
 end)
------------------------------
+
 close.MouseButton1Click:Connect(function()
 	if toolbar.Visible then	
 	toggleToolbar()
@@ -180,7 +178,6 @@ textSizeConstraint.Parent = LABEL
 textSizeConstraint.MaxTextSize = 18
 textSizeConstraint.MinTextSize = 16
 
--- closing the fackin gui
 local isVisible = true
 local originalSize = LABEL.Size
 
@@ -230,7 +227,7 @@ end
 		toggleLabelVisibility()
 	end
 end)
--- Toggle RGB effect with Insert key
+
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	if not gameProcessedEvent then
 		if input.KeyCode == Enum.KeyCode.RightBracket then
@@ -239,7 +236,6 @@ UIS.InputBegan:Connect(function(input, gameProcessedEvent)
 	end
 end)
 
--- FPS Counter
 RunService.RenderStepped:Connect(function(dt)
 	frameCount += 1
 	elapsedTime += dt
@@ -255,7 +251,6 @@ RunService.RenderStepped:Connect(function(dt)
 	end
 end)
 
--- RGB color animation loop
 spawn(function()
 	while true do
 		if var then
@@ -272,7 +267,7 @@ spawn(function()
 		wait(0.05)
 	end
 end)
--- color for iy
+
 local reddishiy = Color3.fromRGB(245, 99, 66)
 local whiteiy = Color3.fromRGB(255, 255, 255)
 
@@ -293,18 +288,13 @@ spawn(function()
 		wait(0.1)
 	end
 end)
--- Notifications
+
 StarterGui:SetCore("SendNotification", {
 	Title = "water.5202",
 	Text = "thanks for using the script!",
 	Duration = 5,
 })
 
-StarterGui:SetCore("SendNotification", {
-	Title = "Interface",
-	Text = "Toggling UI or RGB does not work on mobile!",
-	Duration = 5,
-})
 StarterGui:SetCore("SendNotification", {
 	Title = "Interface",
 	Text = "Press ] to toggle RGB and [ for UI!",
