@@ -138,15 +138,16 @@ function toggleToolbar()
 		close.Visible = true
 		RGB.Visible = true
 		IY.Visible = true
-
+                ESP.Visible = true
 		fade(close, 0, 1.5)
 		fade(RGB, 0, 1.5)
 		fade(IY, 0, 1.5)
+		fade(ESP, 0, 1.5)
 	else
 		fade(close, 1, 0.3)
 		fade(RGB, 1, 0.3)
 		fade(IY, 1, 0.3)
-
+		fade(ESP, 1, 0.3)
 		local closeTween = TweenService:Create(toolbar, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
 			Size = UDim2.new(0, 0, 0, 25)
 		})
@@ -157,6 +158,7 @@ function toggleToolbar()
 			close.Visible = false
 			RGB.Visible = false
 			IY.Visible = false
+			ESP.Visible = false
 		end)
 	end
 end
