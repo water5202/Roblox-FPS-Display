@@ -248,36 +248,36 @@ textSizeConstraint6.Parent = IY
 textSizeConstraint6.MaxTextSize = 18
 textSizeConstraint6.MinTextSize = 16
 
-while true do
-    wait(0.7)
-    if espval then
-        for _, player in pairs(Players:GetPlayers()) do
-            if player ~= localPlayer then
-                local character = player.Character
-                if character and not character:FindFirstChild("ESP") then
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "ESP"
-                    highlight.Adornee = character
-                    highlight.FillTransparency = 1
-                    highlight.OutlineColor = Color3.new(1, 1, 1)
-                    highlight.Parent = character
+spawn(function()
+    while true do
+        wait(0.7)
+        if espval then
+            for _, player in pairs(Players:GetPlayers()) do
+                if player ~= localPlayer then
+                    local character = player.Character
+                    if character and not character:FindFirstChild("ESP") then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Name = "ESP"
+                        highlight.Adornee = character
+                        highlight.FillTransparency = 1
+                        highlight.OutlineColor = Color3.new(1, 1, 1)
+                        highlight.Parent = character
+                    end
                 end
             end
-        end
-    else
-        for _, player in pairs(Players:GetPlayers()) do
-            local character = player.Character
-            if character then
-                local highlight = character:FindFirstChild("ESP")
-                if highlight then
-                    highlight:Destroy()
+        else
+            for _, player in pairs(Players:GetPlayers()) do
+                local character = player.Character
+                if character then
+                    local highlight = character:FindFirstChild("ESP")
+                    if highlight then
+                        highlight:Destroy()
+                    end
                 end
             end
         end
     end
-end
-
-
+end)
 		
 local isVisible = true
 local originalSize = LABEL.Size
