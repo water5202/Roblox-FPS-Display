@@ -40,7 +40,7 @@ LABEL.Position = UDim2.new(0, 150, 0, 100)
 LABEL.BackgroundTransparency = 0
 LABEL.Font = Enum.Font.RobotoMono
 LABEL.TextScaled = true
-LABEL.Text = "nul/nul"
+LABEL.Text = "placeholder"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.AutoButtonColor = false
 
