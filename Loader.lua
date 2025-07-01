@@ -79,8 +79,6 @@ close.Size = UDim2.new(0, 15, 0, 15)
 close.BackgroundTransparency = 1
 close.Position = UDim2.new(0, 130, 0, 5)
 close.Visible = false
-close.Font = Enum.Font.RobotoMono
-close.TextScaled = true
 
 local DragDetector = Instance.new("UIDragDetector")
 DragDetector.Name = "44726167204465746563746f7"
@@ -95,8 +93,6 @@ RGB.Size = UDim2.new(0, 15, 0, 15)
 RGB.BackgroundTransparency = 1
 RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
-RGB.Font = Enum.Font.RobotoMono
-RGB.TextScaled = true
 
 local IY = Instance.new("TextButton")
 IY.Name = "54657874427574746f6e 2"
@@ -107,8 +103,6 @@ IY.Size = UDim2.new(0, 15, 0, 15)
 IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
-IY.Font = Enum.Font.RobotoMono
-IY.TextScaled = true
 
 local ESP = Instance.new("TextButton")
 ESP.Name = "54657874427574746f6e 4"
@@ -119,8 +113,6 @@ ESP.Size = UDim2.new(0, 15, 0, 15)
 ESP.BackgroundTransparency = 1
 ESP.Position = UDim2.new(0, 65, 0, 5)
 ESP.Visible = false
-ESP.Font = Enum.Font.RobotoMono
-ESP.TextScaled = true
 
 function toggleToolbar()
 	local function fade(object, targetTransparency, duration)
@@ -224,30 +216,6 @@ textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 2"
 textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
-
-local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
-textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint3.Parent = close
-textSizeConstraint3.MaxTextSize = 18
-textSizeConstraint3.MinTextSize = 16
-
-local textSizeConstraint4 = Instance.new("UITextSizeConstraint")
-textSizeConstraint4.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint4.Parent = RGB
-textSizeConstraint4.MaxTextSize = 18
-textSizeConstraint4.MinTextSize = 16
-
-local textSizeConstraint5 = Instance.new("UITextSizeConstraint")
-textSizeConstraint5.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint5.Parent = ESP
-textSizeConstraint5.MaxTextSize = 18
-textSizeConstraint5.MinTextSize = 16
-
-local textSizeConstraint6 = Instance.new("UITextSizeConstraint")
-textSizeConstraint6.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint6.Parent = IY
-textSizeConstraint6.MaxTextSize = 18
-textSizeConstraint6.MinTextSize = 16
 
 spawn(function()
     while true do
