@@ -190,6 +190,14 @@ UIStroke2.Transparency = 0.75
 UIStroke2.Color = Color3.fromRGB(0, 0, 0)
 UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 
+local UIStroke3 = Instance.new("UIStroke")
+UIStroke3.Name = "3"
+UIStroke3.Parent = UITOGGLE
+UIStroke3.Thickness = 1.2
+UIStroke3.Transparency = 0.75
+UIStroke3.Color = Color3.fromRGB(0, 0, 0)
+UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
 local UICORNER1 = Instance.new("UICorner")
 UICORNER1.Name = "5549436f726e6572 1"
 UICORNER1.Parent = LABEL
