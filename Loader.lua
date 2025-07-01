@@ -43,6 +43,7 @@ UITOGGLE.Text = "Toggle UI"
 UITOGGLE.TextColor3 = Color3.new(255, 255, 255)
 UITOGGLE.Size = UDim2.new(0, 110, 0, 50)
 UITOGGLE.Position = UDim2.new(0, 9, 0, 127)
+UITOGGLE.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOGGLE.AutoButtonColor = false
 
 local LABEL = Instance.new("TextButton")
@@ -51,7 +52,6 @@ LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 LABEL.Parent = UI
 LABEL.Size = UDim2.new(0, 130, 0, 60)
 LABEL.Position = UDim2.new(0, 150, 0, 100)
-LABEL.BackgroundTransparency = 0
 LABEL.Font = Enum.Font.RobotoMono
 LABEL.TextScaled = true
 LABEL.Text = "placeholder"
