@@ -210,7 +210,7 @@ textSizeConstraint1.MinTextSize = 16
 
 local textSizeConstraint2 = Instance.new("UITextSizeConstraint")
 textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 2"
-textSizeConstraint2.Parent = LABEL
+textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
