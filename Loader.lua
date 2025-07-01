@@ -68,6 +68,7 @@ toolbar.Position = UDim2.new(0, 128, 0, -10)
 toolbar.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 toolbar.Visible = false
 toolbar.Transparency = 0.5
+toolbar.TextScaled = true
 
 local close = Instance.new("TextButton")
 close.Name = "54657874427574746f6e 1"
@@ -192,30 +193,6 @@ ESP.MouseButton1Click:Connect(function()
 espval = not espval 
 end)
 
-local UIStroke1 = Instance.new("UIStroke")
-UIStroke1.Name = "1"
-UIStroke1.Parent = LABEL
-UIStroke1.Thickness = 1.2
-UIStroke1.Transparency = 0.75
-UIStroke1.Color = Color3.fromRGB(0, 0, 0)
-UIStroke1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-local UIStroke2 = Instance.new("UIStroke")
-UIStroke2.Name = "2"
-UIStroke2.Parent = LABEL
-UIStroke2.Thickness = 1.2
-UIStroke2.Transparency = 0.75
-UIStroke2.Color = Color3.fromRGB(0, 0, 0)
-UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-local UIStroke3 = Instance.new("UIStroke")
-UIStroke3.Name = "3"
-UIStroke3.Parent = UITOGGLE
-UIStroke3.Thickness = 1.2
-UIStroke3.Transparency = 0.75
-UIStroke3.Color = Color3.fromRGB(0, 0, 0)
-UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
 local UICORNER1 = Instance.new("UICorner")
 UICORNER1.Name = "5549436f726e6572 1"
 UICORNER1.Parent = LABEL
@@ -246,8 +223,8 @@ textSizeConstraint2.MinTextSize = 16
 local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
 textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
 textSizeConstraint3.Parent = toolbar
-textSizeConstraint3.MaxTextSize = 28
-textSizeConstraint3.MinTextSize = 26
+textSizeConstraint3.MaxTextSize = 15
+textSizeConstraint3.MinTextSize = 13
 
 local isVisible = true
 local originalSize = LABEL.Size
