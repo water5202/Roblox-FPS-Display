@@ -36,6 +36,15 @@ version.Name = "version"
 version.Value = 102
 print(version.Value)
 
+local UITOGGLE = Instance.new("TextButton")
+UITOGGLE.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69;"
+UITOGGLE.Parent = UI
+UITOGGLE.Text = "Toggle UI"
+UITOGGLE.TextColor3 = Color3.new(255, 255, 255)
+UITOGGLE.Size = UDim2.new(0, 110, 0, 50)
+UITOGGLE.Position = UDim2.new(0, 9, 0, 127)
+UITOGGLE.AutoButtonColor = false
+
 local LABEL = Instance.new("TextButton")
 LABEL.Name = "54657874427574746f6e"
 LABEL.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
@@ -233,6 +242,13 @@ toggleToolbar()
 end
 		toggleLabelVisibility()
 	end
+end)
+
+UITOGGLE.MouseButton1Click:Connect(function()
+if toolbar.Visible then	
+toggleToolbar()
+end
+toggleLabelVisibility()
 end)
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
