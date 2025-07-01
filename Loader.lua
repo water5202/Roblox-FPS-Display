@@ -68,7 +68,6 @@ toolbar.Position = UDim2.new(0, 128, 0, -10)
 toolbar.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 toolbar.Visible = false
 toolbar.Transparency = 0.5
-toolbar.TextScaled = true
 
 local close = Instance.new("TextButton")
 close.Name = "54657874427574746f6e 1"
@@ -80,6 +79,7 @@ close.BackgroundTransparency = 1
 close.Position = UDim2.new(0, 130, 0, 5)
 close.Visible = false
 close.Font = Enum.Font.RobotoMono
+close.TextScaled = true
 
 local DragDetector = Instance.new("UIDragDetector")
 DragDetector.Name = "44726167204465746563746f7"
@@ -95,6 +95,7 @@ RGB.BackgroundTransparency = 1
 RGB.Position = UDim2.new(0, 110, 0, 5)
 RGB.Visible = false
 RGB.Font = Enum.Font.RobotoMono
+RGB.TextScaled = true
 
 local IY = Instance.new("TextButton")
 IY.Name = "54657874427574746f6e 2"
@@ -106,6 +107,7 @@ IY.BackgroundTransparency = 1
 IY.Position = UDim2.new(0, 90, 0, 5)
 IY.Visible = false
 IY.Font = Enum.Font.RobotoMono
+IY.TextScaled = true
 
 local ESP = Instance.new("TextButton")
 ESP.Name = "54657874427574746f6e 4"
@@ -117,6 +119,7 @@ ESP.BackgroundTransparency = 1
 ESP.Position = UDim2.new(0, 70, 0, 5)
 ESP.Visible = false
 ESP.Font = Enum.Font.RobotoMono
+ESP.TextScaled = true
 
 function toggleToolbar()
 	local function fade(object, targetTransparency, duration)
@@ -222,9 +225,27 @@ textSizeConstraint2.MinTextSize = 16
 
 local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
 textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint3.Parent = toolbar
+textSizeConstraint3.Parent = close
 textSizeConstraint3.MaxTextSize = 15
 textSizeConstraint3.MinTextSize = 13
+
+local textSizeConstraint4 = Instance.new("UITextSizeConstraint")
+textSizeConstraint4.Name = "55495465787453697a65436f6e73747261696e74 3"
+textSizeConstraint4.Parent = RGB
+textSizeConstraint4.MaxTextSize = 15
+textSizeConstraint4.MinTextSize = 13
+
+local textSizeConstraint5 = Instance.new("UITextSizeConstraint")
+textSizeConstraint5.Name = "55495465787453697a65436f6e73747261696e74 3"
+textSizeConstraint5.Parent = ESP
+textSizeConstraint5.MaxTextSize = 15
+textSizeConstraint5.MinTextSize = 13
+
+local textSizeConstraint6 = Instance.new("UITextSizeConstraint")
+textSizeConstraint6.Name = "55495465787453697a65436f6e73747261696e74 3"
+textSizeConstraint6.Parent = IY
+textSizeConstraint6.MaxTextSize = 15
+textSizeConstraint6.MinTextSize = 13
 
 local isVisible = true
 local originalSize = LABEL.Size
