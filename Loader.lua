@@ -73,7 +73,7 @@ SHADOW.Parent = LABEL
 SHADOW.AnchorPoint = LABEL.AnchorPoint
 SHADOW.BackgroundTransparency = 1
 SHADOW.Size = UDim2.new(0, 169,0, 91)
-SHADOW.Position = UDim2.new(0, 150, 0, 100)
+SHADOW.Position = UDim2.new(0, -20, 0, -15)
 SHADOW.Image = "rbxassetid://84623332547781"
 SHADOW.ZIndex = -100
 
