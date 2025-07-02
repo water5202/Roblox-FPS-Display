@@ -181,6 +181,7 @@ close.MouseButton1Click:Connect(function()
 	end
 	toggleLabelVisibility()
 	antilag = true
+	UITOGGLE.Visible = false
 	task.wait(0.6)
 	UI:Destroy()
 end)
