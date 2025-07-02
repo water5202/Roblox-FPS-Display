@@ -290,7 +290,8 @@ local originalSize = LABEL.Size
 function toggleLabelVisibility()
 	if isVisible then
 		LABEL.TextTransparency = 1
-
+		SHADOW.Visible = false
+		
 		if shrinkHoriz then shrinkHoriz:Cancel() end
 		shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
@@ -309,7 +310,7 @@ function toggleLabelVisibility()
 		isVisible = false
 	else
 		LABEL.Visible = true
-
+		SHADOW.Visible = true
 		if growVert then growVert:Cancel() end
 		growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
