@@ -181,8 +181,8 @@ close.MouseButton1Click:Connect(function()
 	end
 	toggleLabelVisibility()
 	task.wait(0.6)
+	antilag = true -- prevent spawn function running
 	UI:Destroy()
-	antilag = true
 end)
 
 RGB.MouseButton1Click:Connect(function()
