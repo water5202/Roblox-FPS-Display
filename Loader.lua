@@ -200,6 +200,10 @@ RGB.MouseButton1Click:Connect(function()
 	var = not var
 end)
 
+UITOOLBAR.MouseButton1Click:Connect(function()
+toggleToolbar()
+end)
+
 IY.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
