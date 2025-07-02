@@ -284,6 +284,11 @@ textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
+local isVisible = true
+
+local originalSize = LABEL.Size
+local originalPosition = LABEL.Position -- left here for debugging purposes
+
 local originalShadowSize = SHADOW.Size
 local originalShadowPos = SHADOW.Position
 
