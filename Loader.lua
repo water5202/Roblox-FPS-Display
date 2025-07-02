@@ -70,6 +70,7 @@ LABEL.AutoButtonColor = false
 local SHADOW = Instance.new("ImageLabel")
 SHADOW.Name = "496d6167654c6162656c"
 SHADOW.Parent = LABEL
+SHADOW.AnchorPoint = LABEL.AnchorPoint
 SHADOW.BackgroundTransparency = 1
 SHADOW.Size = UDim2.new(0, 169,0, 91)
 SHADOW.Position = UDim2.new(0, 150, 0, 100)
