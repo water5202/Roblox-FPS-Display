@@ -227,8 +227,11 @@ textSizeConstraint2.MinTextSize = 16
 local hasexit = false
 
 task.spawn(function()
-    while hasexit == false do
+    while true do
         task.wait(0.1)
+if hasexit == true then
+return
+end
         if espval then
             for _, player in pairs(Players:GetPlayers()) do
                 if player ~= localPlayer then
@@ -339,7 +342,10 @@ RunService.RenderStepped:Connect(function(dt)
 end)
 
 task.spawn(function()
-while hasexit == false do
+    while true do
+if hasexit == true then
+return
+end
 		if var then
 			rainbowT = rainbowT + 0.1
 			local r = math.sin(rainbowT) * 127 + 128
@@ -359,7 +365,10 @@ local reddishiy = Color3.fromRGB(245, 99, 66)
 local whiteiy = Color3.fromRGB(255, 255, 255)
 
 task.spawn(function()
-while hasexit == false do
+    while true do
+if hasexit == true then
+return
+end
 		lerpT = lerpT + direction * 0.1
 
 		if lerpT >= 1 then
