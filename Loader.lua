@@ -40,7 +40,7 @@ version.Value = 102
 print(version.Value)
 
 local UITOGGLE = Instance.new("TextButton")
-UITOGGLE.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69;"
+UITOGGLE.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69 1"
 UITOGGLE.Parent = UI
 UITOGGLE.Text = "Toggle UI"
 UITOGGLE.TextColor3 = Color3.new(255, 255, 255)
@@ -51,12 +51,12 @@ UITOGGLE.AutoButtonColor = false
 UITOGGLE.Font = Enum.Font.RobotoMono
 
 local UITOOLBAR = Instance.new("TextButton")
-UITOOLBAR.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69;"
+UITOOLBAR.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69 2"
 UITOOLBAR.Parent = UI
 UITOOLBAR.Text = "Toggle Toolbar"
 UITOOLBAR.TextColor3 = Color3.new(255, 255, 255)
 UITOOLBAR.Size = UDim2.new(0, 110, 0, 50)
-UITOOLBAR.Position = UDim2.new(0, -49, 0, 127)
+UITOOLBAR.Position = UDim2.new(0, 9, 0, 87)
 UITOOLBAR.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOOLBAR.AutoButtonColor = false
 UITOOLBAR.Font = Enum.Font.RobotoMono
@@ -284,6 +284,12 @@ UICORNER3.Name = "5549436f726e6572 3"
 UICORNER3.Parent = UITOGGLE
 UICORNER3.CornerRadius = UDim.new(0, 10)
 
+
+local UICORNER4 = Instance.new("UICorner")
+UICORNER3.Name = "5549436f726e6572 4"
+UICORNER3.Parent = UITOOLBAR
+UICORNER3.CornerRadius = UDim.new(0, 10)
+
 local textSizeConstraint1 = Instance.new("UITextSizeConstraint")
 textSizeConstraint1.Name = "55495465787453697a65436f6e73747261696e74 1"
 textSizeConstraint1.Parent = LABEL
@@ -293,6 +299,12 @@ textSizeConstraint1.MinTextSize = 16
 local textSizeConstraint2 = Instance.new("UITextSizeConstraint")
 textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 2"
 textSizeConstraint2.Parent = UITOGGLE
+textSizeConstraint2.MaxTextSize = 18
+textSizeConstraint2.MinTextSize = 16
+
+local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
+textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 3"
+textSizeConstraint2.Parent = UITOOLBAR
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
