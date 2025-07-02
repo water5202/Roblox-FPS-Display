@@ -229,9 +229,6 @@ local hasexit = false
 task.spawn(function()
     while true do
         task.wait(0.1)
-if hasexit == true then
-return
-end
         if espval then
             for _, player in pairs(Players:GetPlayers()) do
                 if player ~= localPlayer then
@@ -258,6 +255,9 @@ end
             end
         end
     end
+if hasexit == true then
+return
+end
 end)
 		
 local isVisible = true
