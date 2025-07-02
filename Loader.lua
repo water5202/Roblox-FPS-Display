@@ -17,7 +17,7 @@ local lerpT = 0
 local var = false
 local espval = false
 local localPlayer = Players.LocalPlayer
-local hasexit = false
+local antilag = false
 
 if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
     StarterGui:SetCore("SendNotification", {
@@ -182,7 +182,7 @@ close.MouseButton1Click:Connect(function()
 	toggleLabelVisibility()
 	wait(0.9)
 	UI:Destroy()
-  hasexit = true
+	antilag = true
 end)
 
 RGB.MouseButton1Click:Connect(function()
@@ -225,7 +225,7 @@ textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
 spawn(function()
-    while hasexit == false do
+    while antilag == false do
         task.wait(0.1)
         if espval then
             for _, player in pairs(Players:GetPlayers()) do
@@ -337,7 +337,7 @@ RunService.RenderStepped:Connect(function(dt)
 end)
 
 spawn(function()
-	while true do
+	while antilag == false do
 		if var then
 			rainbowT = rainbowT + 0.1
 			local r = math.sin(rainbowT) * 127 + 128
@@ -357,7 +357,7 @@ local reddishiy = Color3.fromRGB(245, 99, 66)
 local whiteiy = Color3.fromRGB(255, 255, 255)
 
 spawn(function()
-	while true do
+	while antilag == false do
 		lerpT = lerpT + direction * 0.1
 
 		if lerpT >= 1 then
