@@ -20,7 +20,7 @@ local localPlayer = Players.LocalPlayer
 local antilag = false
 
 function antilagreturn()
-	if antilag then return end
+	if antilag then return
 end
 
 if CoreGUI:FindFirstChild("53637265656e4775690d0a") then
