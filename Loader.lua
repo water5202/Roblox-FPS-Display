@@ -284,8 +284,8 @@ textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
-local isVisible = true
-local originalSize = LABEL.Size
+local originalShadowSize = SHADOW.Size
+local originalShadowPos = SHADOW.Position
 
 function toggleLabelVisibility()
     if isVisible then
@@ -296,8 +296,8 @@ function toggleLabelVisibility()
             Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
         })
         local shadowShrinkHoriz = TweenService:Create(SHADOW, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
-            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+            Size = UDim2.new(0, originalShadowSize.X.Offset * 0.05, originalShadowSize.Y.Scale, originalShadowSize.Y.Offset),
+            Position = originalShadowPos
         })
         shrinkHoriz:Play()
         shadowShrinkHoriz:Play()
@@ -308,8 +308,8 @@ function toggleLabelVisibility()
             Size = UDim2.new(0, originalSize.X.Offset * 0.05, 0, 0)
         })
         local shadowShrinkVert = TweenService:Create(SHADOW, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, 0, 0),
-            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+            Size = UDim2.new(0, originalShadowSize.X.Offset * 0.05, 0, 0),
+            Position = originalShadowPos
         })
         shrinkVert:Play()
         shadowShrinkVert:Play()
@@ -325,8 +325,8 @@ function toggleLabelVisibility()
             Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
         })
         local shadowGrowVert = TweenService:Create(SHADOW, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
-            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+            Size = UDim2.new(0, originalShadowSize.X.Offset * 0.05, originalShadowSize.Y.Scale, originalShadowSize.Y.Offset),
+            Position = originalShadowPos
         })
         growVert:Play()
         shadowGrowVert:Play()
@@ -337,8 +337,8 @@ function toggleLabelVisibility()
             Size = originalSize
         })
         local shadowGrowHoriz = TweenService:Create(SHADOW, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-            Size = UDim2.new(0, originalSize.X.Offset + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
-            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+            Size = originalShadowSize,
+            Position = originalShadowPos
         })
         growHoriz:Play()
         shadowGrowHoriz:Play()
