@@ -32,6 +32,7 @@ local UI = Instance.new("ScreenGui")
 UI.Name = "53637265656e4775690d0a"
 UI.Parent = CoreGUI
 UI.ResetOnSpawn = false
+UI.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 local version = Instance.new("IntValue")
 version.Name = "version"
@@ -65,6 +66,15 @@ LABEL.TextScaled = true
 LABEL.Text = "placeholder"
 LABEL.TextColor3 = Color3.new(255, 255, 255)
 LABEL.AutoButtonColor = false
+
+local SHADOW = Instance.new("ImageLabel")
+SHADOW.Name = "496d6167654c6162656c"
+SHADOW.Parent = LABEL
+SHADOW.BackgroundTransparency = 1
+SHADOW.Size = UDim2.new(0, 169,0, 91)
+SHADOW.Position = UDim2.new(0, 150, 0, 100)
+SHADOW.Image = "rbxassetid://84623332547781"
+SHADOW.ZIndex = -100
 
 local toolbar = Instance.new("Frame")
 toolbar.Name = "4672616d650d0a"
