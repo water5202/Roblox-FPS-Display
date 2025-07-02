@@ -50,8 +50,8 @@ UITOGGLE.AutoButtonColor = false
 UITOGGLE.Font = Enum.Font.RobotoMono
 
 if not UIS.TouchEnabled then
-    UITOGGLE.Visible = false
-    UITOGGLE.Enabled = false
+	UITOGGLE.Visible = false
+	UITOGGLE.Enabled = false
 end
 	
 local LABEL = Instance.new("TextButton")
@@ -179,8 +179,8 @@ close.MouseButton1Click:Connect(function()
 	toggleToolbar()
 	end
 	toggleLabelVisibility()
-	hasexit = true
 	UITOGGLE.Visible = false
+	var = false
 	task.wait(0.6)
 	UI:Destroy()
 end)
@@ -224,8 +224,6 @@ textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
-local hasexit = false
-
 task.spawn(function()
     while true do
         task.wait(0.1)
@@ -255,9 +253,6 @@ task.spawn(function()
             end
         end
     end
-if hasexit == true then
-return
-end
 end)
 		
 local isVisible = true
@@ -342,10 +337,7 @@ RunService.RenderStepped:Connect(function(dt)
 end)
 
 task.spawn(function()
-    while true do
-if hasexit == true then
-return
-end
+	while true do
 		if var then
 			rainbowT = rainbowT + 0.1
 			local r = math.sin(rainbowT) * 127 + 128
@@ -357,7 +349,7 @@ end
 			LABEL.TextColor3 = Color3.fromRGB(255, 255, 255)
 			RGB.TextColor3 = Color3.fromRGB(255, 255, 255)
 		end
-		task.wait(0.05)
+		wait(0.05)
 	end
 end)
 
@@ -365,10 +357,7 @@ local reddishiy = Color3.fromRGB(245, 99, 66)
 local whiteiy = Color3.fromRGB(255, 255, 255)
 
 task.spawn(function()
-    while true do
-if hasexit == true then
-return
-end
+	while true do
 		lerpT = lerpT + direction * 0.1
 
 		if lerpT >= 1 then
@@ -381,7 +370,7 @@ end
 
 		local interpolated = reddishiy:lerp(whiteiy, lerpT)
 		IY.TextColor3 = interpolated
-		task.wait(0.05)
+		wait(0.1)
 	end
 end)
 
