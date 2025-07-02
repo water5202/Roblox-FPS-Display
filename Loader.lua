@@ -180,7 +180,7 @@ close.MouseButton1Click:Connect(function()
 	toggleToolbar()
 	end
 	toggleLabelVisibility()
-	wait(0.9)
+	task.wait(0.6)
 	UI:Destroy()
 	antilag = true
 end)
