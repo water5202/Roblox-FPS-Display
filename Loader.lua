@@ -310,7 +310,6 @@ function toggleLabelVisibility()
 		isVisible = false
 	else
 		LABEL.Visible = true
-		SHADOW.Visible = true
 		if growVert then growVert:Cancel() end
 		growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
@@ -328,6 +327,7 @@ function toggleLabelVisibility()
 		LABEL.TextTransparency = 0
 		isVisible = true
 		anim = false
+		SHADOW.Visible = true
 	end
 end
 
