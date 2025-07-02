@@ -180,8 +180,8 @@ close.MouseButton1Click:Connect(function()
 	toggleToolbar()
 	end
 	toggleLabelVisibility()
+	antilag = true
 	task.wait(0.6)
-	antilag = true -- prevent spawn function running
 	UI:Destroy()
 end)
 
