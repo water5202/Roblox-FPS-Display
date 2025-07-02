@@ -174,17 +174,6 @@ LABEL.InputBegan:Connect(function(input)
 	end
 end)
 
-close.MouseButton1Click:Connect(function()
-	if toolbar.Visible then	
-	toggleToolbar()
-	end
-	toggleLabelVisibility()
-	UITOGGLE.Visible = false
-	espval = false
-	task.wait(0.6)
-	UI:Destroy()
-end)
-
 RGB.MouseButton1Click:Connect(function()
 	var = not var
 end)
@@ -195,7 +184,7 @@ end)
 
 local ecu = true
 
-RunService.Heartbeat:Connect(function()
+local hbc = RunService.Heartbeat:Connect(function()
     if espval then
         ecu = false
         for _, player in pairs(Players:GetPlayers()) do
@@ -227,9 +216,34 @@ RunService.Heartbeat:Connect(function()
     end
 end)
 
+local function noesp()
+    for _, player in pairs(Players:GetPlayers()) do
+        local character = player.Character
+        if character then
+            local highlight = character:FindFirstChild("ESP")
+            if highlight then
+                highlight:Destroy()
+            end
+        end
+    end
+end
+
 ESP.MouseButton1Click:Connect(function()
     espval = not espval
     toggleesp()
+end)
+
+close.MouseButton1Click:Connect(function()
+	if toolbar.Visible then	
+	toggleToolbar()
+	end
+	toggleLabelVisibility()
+	UITOGGLE.Visible = false
+	espval = false
+	hbc:Disconnect()
+	noesp()
+	task.wait(0.6)
+	UI:Destroy()
 end)
 
 local UICORNER1 = Instance.new("UICorner")
