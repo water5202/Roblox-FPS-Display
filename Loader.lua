@@ -180,7 +180,7 @@ close.MouseButton1Click:Connect(function()
 	end
 	toggleLabelVisibility()
 	UITOGGLE.Visible = false
-	var = false
+	espval = false
 	task.wait(0.6)
 	UI:Destroy()
 end)
