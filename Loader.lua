@@ -288,46 +288,66 @@ local isVisible = true
 local originalSize = LABEL.Size
 
 function toggleLabelVisibility()
-	if isVisible then
-		LABEL.TextTransparency = 1
+    if isVisible then
+        LABEL.TextTransparency = 1
 
-		if shrinkHoriz then shrinkHoriz:Cancel() end
-		shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
-		})
-		shrinkHoriz:Play()
-		shrinkHoriz.Completed:Wait()
+        if shrinkHoriz then shrinkHoriz:Cancel() end
+        shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
+        })
+        local shadowShrinkHoriz = TweenService:Create(SHADOW, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
+            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+        })
+        shrinkHoriz:Play()
+        shadowShrinkHoriz:Play()
+        shrinkHoriz.Completed:Wait()
 
-		if shrinkVert then shrinkVert:Cancel() end
-		shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-			Size = UDim2.new(0, originalSize.X.Offset * 0.05, 0, 0)
-		})
-		shrinkVert:Play()
-		shrinkVert.Completed:Wait()
+        if shrinkVert then shrinkVert:Cancel() end
+        shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05, 0, 0)
+        })
+        local shadowShrinkVert = TweenService:Create(SHADOW, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, 0, 0),
+            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+        })
+        shrinkVert:Play()
+        shadowShrinkVert:Play()
+        shrinkVert.Completed:Wait()
 
-		LABEL.Visible = false
-		isVisible = false
-	else
-		LABEL.Visible = true
+        LABEL.Visible = false
+        isVisible = false
+    else
+        LABEL.Visible = true
 
-		if growVert then growVert:Cancel() end
-		growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
-		})
-		growVert:Play()
-		growVert.Completed:Wait()
+        if growVert then growVert:Cancel() end
+        growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
+        })
+        local shadowGrowVert = TweenService:Create(SHADOW, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset * 0.05 + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
+            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+        })
+        growVert:Play()
+        shadowGrowVert:Play()
+        growVert.Completed:Wait()
 
-		if growHoriz then growHoriz:Cancel() end
-		growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
-			Size = originalSize
-		})
-		growHoriz:Play()
-		growHoriz.Completed:Wait()
+        if growHoriz then growHoriz:Cancel() end
+        growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = originalSize
+        })
+        local shadowGrowHoriz = TweenService:Create(SHADOW, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+            Size = UDim2.new(0, originalSize.X.Offset + 39, originalSize.Y.Scale, originalSize.Y.Offset + 31),
+            Position = UDim2.new(0, LABEL.Position.X.Offset - 20, 0, LABEL.Position.Y.Offset - 15)
+        })
+        growHoriz:Play()
+        shadowGrowHoriz:Play()
+        growHoriz.Completed:Wait()
 
-		LABEL.TextTransparency = 0
-		isVisible = true
-		anim = false
-	end
+        LABEL.TextTransparency = 0
+        isVisible = true
+        anim = false
+    end
 end
 
 UIS.InputBegan:Connect(function(input, gameProcessedEvent)
