@@ -56,7 +56,7 @@ UITOOLBAR.Parent = UI
 UITOOLBAR.Text = "Toggle Toolbar"
 UITOOLBAR.TextColor3 = Color3.new(255, 255, 255)
 UITOOLBAR.Size = UDim2.new(0, 110, 0, 50)
-UITOOLBAR.Position = UDim2.new(0, 9, 0, 87)
+UITOOLBAR.Position = UDim2.new(0, 9, 0, 187)
 UITOOLBAR.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOOLBAR.AutoButtonColor = false
 UITOOLBAR.Font = Enum.Font.RobotoMono
@@ -290,9 +290,9 @@ UICORNER3.CornerRadius = UDim.new(0, 10)
 
 
 local UICORNER4 = Instance.new("UICorner")
-UICORNER3.Name = "5549436f726e6572 4"
-UICORNER3.Parent = UITOOLBAR
-UICORNER3.CornerRadius = UDim.new(0, 10)
+UICORNER4.Name = "5549436f726e6572 4"
+UICORNER4.Parent = UITOOLBAR
+UICORNER4.CornerRadius = UDim.new(0, 10)
 
 local textSizeConstraint1 = Instance.new("UITextSizeConstraint")
 textSizeConstraint1.Name = "55495465787453697a65436f6e73747261696e74 1"
