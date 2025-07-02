@@ -266,13 +266,15 @@ function toggleLabelVisibility()
 	if isVisible then
 		LABEL.TextTransparency = 1
 
-		local shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		if shrinkHoriz then shrinkHoriz:Cancel() end
+		shrinkHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
 		})
 		shrinkHoriz:Play()
 		shrinkHoriz.Completed:Wait()
 
-		local shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		if shrinkVert then shrinkVert:Cancel() end
+		shrinkVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, 0, 0)
 		})
 		shrinkVert:Play()
@@ -283,13 +285,15 @@ function toggleLabelVisibility()
 	else
 		LABEL.Visible = true
 
-		local growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		if growVert then growVert:Cancel() end
+		growVert = TweenService:Create(LABEL, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = UDim2.new(0, originalSize.X.Offset * 0.05, originalSize.Y.Scale, originalSize.Y.Offset)
 		})
 		growVert:Play()
 		growVert.Completed:Wait()
 
-		local growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		if growHoriz then growHoriz:Cancel() end
+		growHoriz = TweenService:Create(LABEL, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
 			Size = originalSize
 		})
 		growHoriz:Play()
