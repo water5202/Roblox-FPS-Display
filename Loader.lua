@@ -193,8 +193,43 @@ IY.MouseButton1Click:Connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
+local ecu = true
+
+RunService.Heartbeat:Connect(function()
+    if espval then
+        ecu = false
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= localPlayer then
+                local character = player.Character
+                if character and not character:FindFirstChild("ESP") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "ESP"
+                    highlight.Adornee = character
+                    highlight.FillTransparency = 1
+                    highlight.OutlineColor = Color3.new(1, 1, 1)
+                    highlight.Parent = character
+                end
+            end
+        end
+    else
+        if not espCleanupDone then
+            for _, player in pairs(Players:GetPlayers()) do
+                local character = player.Character
+                if character then
+                    local highlight = character:FindFirstChild("ESP")
+                    if highlight then
+                        highlight:Destroy()
+                    end
+                end
+            end
+            ecu = true
+        end
+    end
+end)
+
 ESP.MouseButton1Click:Connect(function()
-espval = not espval 
+    espval = not espval
+    toggleesp()
 end)
 
 local UICORNER1 = Instance.new("UICorner")
@@ -224,37 +259,6 @@ textSizeConstraint2.Parent = UITOGGLE
 textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
-task.spawn(function()
-    while true do
-        task.wait(0.1)
-        if espval then
-            for _, player in pairs(Players:GetPlayers()) do
-                if player ~= localPlayer then
-                    local character = player.Character
-                    if character and not character:FindFirstChild("ESP") then
-                        local highlight = Instance.new("Highlight")
-                        highlight.Name = "ESP"
-                        highlight.Adornee = character
-                        highlight.FillTransparency = 1
-                        highlight.OutlineColor = Color3.new(1, 1, 1)
-                        highlight.Parent = character
-                    end
-                end
-            end
-        else
-            for _, player in pairs(Players:GetPlayers()) do
-                local character = player.Character
-                if character then
-                    local highlight = character:FindFirstChild("ESP")
-                    if highlight then
-                        highlight:Destroy()
-                    end
-                end
-            end
-        end
-    end
-end)
-		
 local isVisible = true
 local originalSize = LABEL.Size
 
