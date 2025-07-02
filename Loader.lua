@@ -49,6 +49,7 @@ UITOGGLE.Position = UDim2.new(0, 9, 0, 127)
 UITOGGLE.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOGGLE.AutoButtonColor = false
 UITOGGLE.Font = Enum.Font.RobotoMono
+UITOGGLE.TextScaled = true
 
 local UITOOLBAR = Instance.new("TextButton")
 UITOOLBAR.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69 2"
@@ -60,6 +61,7 @@ UITOOLBAR.Position = UDim2.new(0, 9, 0, 187)
 UITOOLBAR.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOOLBAR.AutoButtonColor = false
 UITOOLBAR.Font = Enum.Font.RobotoMono
+UITOOLBAR.TextScaled = true
 
 if not UIS.TouchEnabled then
 	UITOGGLE.Visible = false
