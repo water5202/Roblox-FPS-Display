@@ -307,10 +307,10 @@ textSizeConstraint2.MaxTextSize = 18
 textSizeConstraint2.MinTextSize = 16
 
 local textSizeConstraint3 = Instance.new("UITextSizeConstraint")
-textSizeConstraint2.Name = "55495465787453697a65436f6e73747261696e74 3"
-textSizeConstraint2.Parent = UITOOLBAR
-textSizeConstraint2.MaxTextSize = 18
-textSizeConstraint2.MinTextSize = 16
+textSizeConstraint3.Name = "55495465787453697a65436f6e73747261696e74 3"
+textSizeConstraint3.Parent = UITOOLBAR
+textSizeConstraint3.MaxTextSize = 18
+textSizeConstraint3.MinTextSize = 16
 
 local isVisible = true
 local originalSize = LABEL.Size
