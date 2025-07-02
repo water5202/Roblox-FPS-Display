@@ -50,9 +50,20 @@ UITOGGLE.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
 UITOGGLE.AutoButtonColor = false
 UITOGGLE.Font = Enum.Font.RobotoMono
 
+local UITOOLBAR = Instance.new("TextButton")
+UITOOLBAR.Name = "&#85;&#73;&#84;&#79;&#71;&#71;&#76;&#69;"
+UITOOLBAR.Parent = UI
+UITOOLBAR.Text = "Toggle Toolbar"
+UITOOLBAR.TextColor3 = Color3.new(255, 255, 255)
+UITOOLBAR.Size = UDim2.new(0, 110, 0, 50)
+UITOOLBAR.Position = UDim2.new(0, -49, 0, 127)
+UITOOLBAR.BackgroundColor3 = Color3.new(0.211765, 0.192157, 0.223529)
+UITOOLBAR.AutoButtonColor = false
+UITOOLBAR.Font = Enum.Font.RobotoMono
+
 if not UIS.TouchEnabled then
 	UITOGGLE.Visible = false
-	UITOGGLE.Enabled = false
+	UITOOLBAR.Visible = false
 end
 	
 local LABEL = Instance.new("TextButton")
@@ -250,6 +261,7 @@ close.MouseButton1Click:Connect(function()
 	end
 	toggleLabelVisibility()
 	UITOGGLE.Visible = false
+	UITOOLBAR.Visible = false
 	espval = false
 	hbc:Disconnect()
 	noesp()
